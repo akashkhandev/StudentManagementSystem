@@ -20,19 +20,24 @@
 <script type="text/javascript" src="js/tabs.js"></script>
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+
+<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
 	
 </head>
 <body>
 
 <?php include 'menu.php';?>
 
-<a href="SASShowForm.php">Show Data</a><br>
-<a href="SASShowFormDate.php">Show Data By Date</a><br>
-<a href="SASMainForm.php">Insert</a><br>
-<a href="SASMainFormStudent.php">Insert (Only One)</a><br>
-<a href="SASGetENForm.php">Update</a><br>
-<a href="SASDeleteFormEN.php">Delete EN</a><br>
-<a href="SASDeleteFormDate.php">Delete Date</a><br>
+<div class="pure-menu pure-menu-horizontal">
+    <a href="SASShowForm.php" class="pure-menu-heading pure-menu-link">Show Data</a>
+    <a href="SASShowFormDate.php" class="pure-menu-heading pure-menu-link">Show Data By Date</a>
+    <a href="SASMainForm.php" class="pure-menu-heading pure-menu-link">Insert</a>
+    <a href="SASMainFormStudent.php" class="pure-menu-heading pure-menu-link">Insert (Only One)</a>
+    <a href="SASGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a>
+    <a href="SASDeleteFormEN.php" class="pure-menu-heading pure-menu-link">Delete EN</a>
+    <a href="SASDeleteFormDate.php" class="pure-menu-heading pure-menu-link">Delete Date</a>
+</div>
 
 
 <!-- Footer Section -->

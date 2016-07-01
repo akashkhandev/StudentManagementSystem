@@ -22,15 +22,19 @@
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
 
+<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 </head>
 <body>
 
 <?php include 'menu.php';?>
 
-<a href="StudentData.php">Student Data</a><br>
-<a href="SAS.php">Student Attendance</a><br>
-<a href="StudentResult.php">Student Result</a><br>
+<div class="pure-menu pure-menu-horizontal">
+    <a href="StudentData.php" class="pure-menu-heading pure-menu-link">Student Data</a>
+    <a href="SAS.php" class="pure-menu-heading pure-menu-link">Student Attendance</a>
+    <a href="StudentResult.php" class="pure-menu-heading pure-menu-link">Student Result</a>
+</div>
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>

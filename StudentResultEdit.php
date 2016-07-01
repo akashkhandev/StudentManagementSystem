@@ -47,16 +47,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sname = test_input($_POST["sname"]);
   }
   
+  if (empty($_POST["classname"])) {
+    $classnameErr = "Class is required";
+  } else {
+    $classname = test_input($_POST["classname"]);
+  }
+  
   if (empty($_POST["sect"])) {
     $sectErr = "";
   } else {
     $sect = test_input($_POST["sect"]);
   }
   
-  if (empty($_POST["classname"])) {
-    $classnameErr = "Class is required";
+  if (empty($_POST["term"])) {
+    $termErr = "";
   } else {
-    $classname = test_input($_POST["classname"]);
+    $term = test_input($_POST["term"]);
   }
 
   if (empty($_POST["examdate"])) {
@@ -134,8 +140,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
-	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-	$db->update('studentresult',array('EnrollmentNumber'=>$enrollnum,'SName'=>$sname,'Class'=>$classname,'Section'=>$sect, 'ExamDate'=>$examdate, 'TName'=>$tname, 'Sub1'=>$sub1, 'TSub1'=>$tsub1, 'Sub2'=>$sub2, 'TSub2'=>$tsub2, 'Sub3'=>$sub3,'TSub3'=>$tsub3,'Sub4'=>$sub4,'TSub4'=>$tsub4,'Sub5'=>$sub5,'TSub5'=>$tsub5), $enString); // Table name, column names and values, WHERE conditions
+	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND Class="'.$classname.'" AND Section="'.$sect.'" AND Term="'.$term.'"';
+	$db->update('studentresult',array('EnrollmentNumber'=>$enrollnum,'SName'=>$sname,'Class'=>$classname,'Section'=>$sect,'Term'=>$term, 'ExamDate'=>$examdate, 'TName'=>$tname, 'Sub1'=>$sub1, 'TSub1'=>$tsub1, 'Sub2'=>$sub2, 'TSub2'=>$tsub2, 'Sub3'=>$sub3,'TSub3'=>$tsub3,'Sub4'=>$sub4,'TSub4'=>$tsub4,'Sub5'=>$sub5,'TSub5'=>$tsub5), $enString); // Table name, column names and values, WHERE conditions
 	$res = $db->getResult();
 	//print_r($res);
 }

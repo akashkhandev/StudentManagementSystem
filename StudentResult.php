@@ -21,6 +21,9 @@
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
+<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+
 
 	
 </head>
@@ -28,11 +31,13 @@
 
 <?php include 'menu.php';?>
 
-<a href="StudentResultSelectTable.php">Show Data</a><br>
-<a href="StudentResultInsertForm.php">Insert</a><br>
-<a href="StudentResultGetENForm.php">Update</a><br>
-<a href="StudentResultDeleteForm.php">Delete</a><br>
-<a href="StudentResultShowForm.php">Show Student Result</a>
+<div class="pure-menu pure-menu-horizontal">
+    <a href="StudentResultSelectTable.php" class="pure-menu-heading pure-menu-link">Show Data</a>
+    <a href="StudentResultInsertForm.php" class="pure-menu-heading pure-menu-link">Insert</a>
+    <a href="StudentResultGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a>
+    <a href="StudentResultDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete</a>
+    <a href="StudentResultShowForm.php" class="pure-menu-heading pure-menu-link">Show Student Result</a>
+</div>
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>

@@ -21,6 +21,8 @@
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
+<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
 
 	
 </head>
@@ -32,19 +34,22 @@
 		include_once('StudentResultShow.php');
 	?> 
 	
-	<table>
+	<table class='pure-table'>
+	<thead>
 	<tr><th>Enrollment Number</th><th>Student Name</th><th>Class</th><th>Section</th><th>Examination Date</th>
 	<th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th>
 	<th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th>
 	<th>Total Subject 5</th></tr>
+	</thead>
 	
 	
+	<tbody>
 	<tr><td><?php echo $enrollnum; ?></td><td><?php echo $sname; ?></td><td><?php echo $classname; ?></td>
-	<td><?php echo $sect; ?></td><td><?php echo $tname; ?></td><td><?php echo $sub1; ?></td>
-	<td><?php echo $tsub1; ?></td><td><?php echo $sub1; ?></td><td><?php echo $tsub2; ?></td>
-	<td><?php echo $sub2; ?></td><td><?php echo $tsub3; ?></td><td><?php echo $sub3; ?></td>
-	<td><?php echo $tsub4; ?></td><td><?php echo $sub4; ?></td><td><?php echo $tsub5; ?></td>
-	<td><?php echo $sub5; ?></td></td>
+	<td><?php echo $sect; ?></td><td><?php echo $examdate; ?></td><td><?php echo $tname; ?></td><td><?php echo $sub1; ?></td>
+	<td><?php echo $tsub1; ?></td><td><?php echo $sub2; ?></td><td><?php echo $tsub2; ?></td>
+	<td><?php echo $sub3; ?></td><td><?php echo $tsub3; ?></td><td><?php echo $sub4; ?></td>
+	<td><?php echo $tsub4; ?></td><td><?php echo $sub5; ?></td><td><?php echo $tsub5; ?></td></tr>
+	</tbody>
 	
 	</table>
 	

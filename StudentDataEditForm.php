@@ -79,6 +79,9 @@
   <br>
   <input type="submit" value="Submit" required>
 
+ </form>
+ </div>
+  
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
 </body>

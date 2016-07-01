@@ -17,11 +17,11 @@
 
 	if(count($res)>0){
 		
-		echo "<table><tr><th>Enrollment Number</th><th>Student Name</th><th>Class</th><th>Section</th><th>Examination Date</th><th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th><th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th><th>Total Subject 5</th></tr>";
+		echo "<table class='pure-table'><thead><tr><th>Enrollment Number</th><th>Student Name</th><th>Class</th><th>Section</th><th>Examination Date</th><th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th><th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th><th>Total Subject 5</th></tr>";
 		for($x = 0; $x < count($res); $x++) {
-			echo "<tr>";
+			echo "</thead><tr><tbody>";
 			echo "<td>".$res[$x]["EnrollmentNumber"]."</td><td>".$res[$x]["SName"]."</td><td>".$res[$x]["Class"]."</td><td>".$res[$x]["Section"]."</td><td>".$res[$x]["ExamDate"]."</td><td>".$res[$x]["TName"]."</td><td>".$res[$x]["Sub1"]."</td><td>".$res[$x]["TSub1"]."</td><td>".$res[$x]["Sub2"]."</td><td>".$res[$x]["TSub2"]."</td><td>".$res[$x]["Sub3"]."</td><td>".$res[$x]["TSub3"]."</td><td>".$res[$x]["Sub4"]."</td><td>".$res[$x]["TSub4"]."</td><td>".$res[$x]["Sub5"]."</td><td>".$res[$x]["TSub5"]."</td>";
-			echo "</tr>";
+			echo "</tr></tbody>";
 			//print "Hello table!";
 		}
 		echo "</table>";

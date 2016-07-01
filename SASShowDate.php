@@ -25,11 +25,11 @@ $dateToday = "";
 	if(count($res)>0){
 		echo "<h3>Date:".$dateToday."</h3>";
 		}
-		echo "<table><tr><th>Date</th><th>Status</th><th>Reason</th></tr>";
+		echo "<br><br><br><table class='pure-table'><thead><tr><th>Date</th><th>Status</th><th>Reason</th></tr></thead>";
 		for($x = 0; $x < count($res); $x++) {
-			echo "<tr>";
+			echo "<tbody><tr>";
 			echo "<td>".$res[$x]["EnrollmentNumber"]."</td><td>".$res[$x]["Status"]."</td><td>".$res[$x]["Reason"]."</td>";
-			echo "</tr>";
+			echo "</tr></tbody>";
 			//print "Hello table!";
 		}
 		echo "</table>";

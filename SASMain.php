@@ -18,13 +18,13 @@ $enrollArray = array();
 
 	if(count($res)>0){
 		
-		echo "<table><tr><th>Enrollment Number</th><th>Name</th><th>Status</th><th>Reason (if leave)</th></tr>";
+		echo "<table class='pure-table'><thead><tr><th>Enrollment Number</th><th>Name</th><th>Status</th><th>Reason (if leave)</th></tr></thead>";
 		for($x = 0; $x < count($res); $x++) {
-			echo "<tr>";
+			echo "<tbody><tr>";
 			$statusString ='name="status'.$x.'"';
 			$reasonString = 'name="reason'.$x.'"';
 			echo "<td>".$res[$x]["EnrollmentNumber"]."</td><td>".$res[$x]["FirstName"]." ".$res[$x]["MiddleName"]." ".$res[$x]["LastName"].'</td><td><select '.$statusString.'><option value="Present">Present</option><option value="Absent">Absent</option><option value="Leave">Leave</option></select></td><td><input type="text" '.$reasonString.'/></td>';
-			echo "</tr>";
+			echo "</tr></tbody>";
 			//print "Hello table!";
 			
 			array_push($enrollArray, $res[$x]["EnrollmentNumber"]);

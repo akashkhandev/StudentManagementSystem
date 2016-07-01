@@ -33,11 +33,11 @@ $enrollnum = "";
 			echo "<h3>Name: ".$resName[0]["FirstName"]." ".$resName[0]["LastName"]."</h3>";
 		}
 		}
-		echo "<table><tr><th>Date</th><th>Status</th><th>Reason</th></tr>";
+		echo "<br><br><br><table class='pure-table'><thead><tr><th>Date</th><th>Status</th><th>Reason</th></tr>";
 		for($x = 0; $x < count($res); $x++) {
-			echo "<tr>";
+			echo "</thead><tbody><tr>";
 			echo "<td>".$res[$x]["DateToday"]."</td><td>".$res[$x]["Status"]."</td><td>".$res[$x]["Reason"]."</td>";
-			echo "</tr>";
+			echo "</tr></tbody>";
 			//print "Hello table!";
 		}
 		echo "</table>";
