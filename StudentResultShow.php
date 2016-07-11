@@ -14,6 +14,24 @@ $examdate;
 		}else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
+		
+		if (empty($_POST["classname"])) {
+			$classnameErr = "Class is required";
+		} else {
+			$classname = test_input($_POST["classname"]);
+		}
+  
+		if (empty($_POST["sect"])) {
+			$sectErr = "";
+		} else {
+			$sect = test_input($_POST["sect"]);
+		}
+  
+		if (empty($_POST["term"])) {
+			$termErr = "";
+		} else {
+			$term = test_input($_POST["term"]);
+		}
   
 		if(!empty($enrollnum))
 		{
@@ -22,10 +40,10 @@ $examdate;
 		$db = new Database();
 		$db->connect();
 		$enrollnum1 = 3;
-		$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-		$db->select('studentresult','EnrollmentNumber, SName, Class, Section, ExamDate, TName, Sub1, TSub1, Sub2, TSub2, Sub3, TSub3, Sub4, TSub4, Sub5, TSub5',NULL, $enString,'id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+		$enString = 'EnrollmentNumber="'.$enrollnum.'" AND Class="'.$classname.'" AND Section="'.$sect.'" AND Term="'.$term.'"';
+		$db->select('studentresult','EnrollmentNumber, SName, Class, Section, Term, ExamDate, TName, Sub1, TSub1, Sub2, TSub2, Sub3, TSub3, Sub4, TSub4, Sub5, TSub5',NULL, $enString,'id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 		$res = $db->getResult();
-		//print_r($res);
+		//print_r($enString);
 		}
 		if (count($res) > 0) {
 	
@@ -33,6 +51,7 @@ $examdate;
 			$sname = $res[0]['SName'];
 			$classname = $res[0]['Class'];
 			$sect = $res[0]['Section'];
+			$term = $res[0]['Term'];
 			$examdate = $res[0]['ExamDate'];
 			$tname = $res[0]['TName'];
 			$sub1 = $res[0]['Sub1'];
@@ -45,6 +64,9 @@ $examdate;
 			$tsub4 = $res[0]['TSub4'];
 			$sub5 = $res[0]['Sub5'];
 			$tsub5 = $res[0]['TSub5'];
+		}
+		else{
+			die("Data not found");
 		}
 	}
 	

@@ -35,7 +35,7 @@ $dateToday = "";
 		echo "</table>";
  
 	}else {
-		echo "0 results";
+		 die("Data not found");
 	}
 
 function test_input($data) {

@@ -42,6 +42,9 @@ $dateToday;
 			$_SESSION['enrollnum'] = $enrollnum;
 			$_SESSION['dateToday'] = $dateToday;
 		}
+		else{
+			die("Data not found");
+		}
 	}
 	
 	

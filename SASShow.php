@@ -43,7 +43,7 @@ $enrollnum = "";
 		echo "</table>";
  
 	}else {
-		echo "0 results";
+		 die("Data not found");
 	}
 	}
 

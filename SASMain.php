@@ -33,7 +33,7 @@ $enrollArray = array();
 		$_SESSION['enrollArray'] = $enrollArray;
  
 	}else {
-		echo "0 results";
+		die("Data not found");
 	}
 ?>
 

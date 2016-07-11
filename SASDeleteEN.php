@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dateSub = test_input($_POST["dateSub"]);
   }
   
+  try{
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
@@ -53,7 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->delete('studentattendance',$enString);  // Table name, WHERE conditions
 	$res = $db->getResult();  
 	//print_r($res);
-	
+	  
+  }
+  catch(Exception $e) {
+	echo $e->getMessage();
+	}
 }
 
 function test_input($data) {

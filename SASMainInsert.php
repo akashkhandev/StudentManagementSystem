@@ -85,6 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				print($reasonArray[$j]."\n");
 			}
 	}
+	else{
+		 die("Data not found");
+	}
 	
 }
 }

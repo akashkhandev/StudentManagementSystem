@@ -33,9 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
-  
-  if(!empty($enrollnum))
-  {
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
@@ -43,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->delete('studentdata',$enString);  // Table name, WHERE conditions
 	$res = $db->getResult();  
 	//print_r($res);
-	}
 }
 
 function test_input($data) {

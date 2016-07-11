@@ -40,15 +40,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
-  if(!empty($enrollnum))
-  {
-	include('class/mysql_crud.php');
+  try{
+  include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
 	$db->delete('studentdata',$enString);  // Table name, WHERE conditions
 	$res = $db->getResult();  
 	//print_r($res);
+	  
+  }
+  catch(Exception $e) {
+	echo $e->getMessage();
 	}
 }
 

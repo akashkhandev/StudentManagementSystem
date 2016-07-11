@@ -43,6 +43,9 @@
 			$cast = $res[0]['Cast'];
 			$subcast = $res[0]['SubCast'];
 		}
+		else{
+			 die("Data not found");
+		}
 	}
 	
 	

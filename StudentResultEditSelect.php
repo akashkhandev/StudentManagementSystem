@@ -31,9 +31,6 @@ $examdate;
   } else {
     $term = test_input($_POST["term"]);
   }
-  
-		if(!empty($enrollnum))
-		{
 
 		include('class/mysql_crud.php');
 		$db = new Database();
@@ -63,7 +60,9 @@ $examdate;
 			$sub5 = $res[0]['Sub5'];
 			$tsub5 = $res[0]['TSub5'];
 		}
-	}
+		else{
+			die("Data not found");
+		}
 	
 	
 

@@ -25,8 +25,8 @@ $name = $fname = $age = $nationality = $address = $city = $contact = $email = ""
 		}
 		echo "</table>";
  
-	}else {
-		echo "0 results";
+	}else { 
+		die("Data not found");
 	}
 ?>
 

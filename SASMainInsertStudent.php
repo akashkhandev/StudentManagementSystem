@@ -60,12 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reason = test_input($_POST["reason"]);
   }
   
+  try{
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
 	$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollnum,'DateToday'=>$dateToday,'Status'=>$status,'Reason'=>$reason));  // Table name, column names and respective values
 	$res = $db->getResult();  
 	//print_r($res);
+	  
+  }
+  catch(Exception $e) {
+	echo $e->getMessage();
+	}
 }
 
 
