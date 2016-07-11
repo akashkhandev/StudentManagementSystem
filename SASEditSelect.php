@@ -25,9 +25,7 @@ $dateToday;
 		include('class/mysql_crud.php');
 		$db = new Database();
 		$db->connect();
-		$enrollnum1 = 3;
 		$enString = 'EnrollmentNumber="'.$enrollnum.'" AND DateToday="'.$dateToday.'"';
-		//print($enString);
 		$db->select('studentattendance','DateToday, EnrollmentNumber, Status, Reason',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 		$res = $db->getResult();
 		//print_r($res);

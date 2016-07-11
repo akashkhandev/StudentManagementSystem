@@ -46,6 +46,8 @@
   <input type="text" name="reason" value="<?php echo $reason; ?>">
   <br>
   <input type="submit" value="Submit">
+  </form>
+  </div>
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>

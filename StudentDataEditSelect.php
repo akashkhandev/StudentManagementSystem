@@ -16,15 +16,13 @@
 		if(!empty($enrollnum))
 		{
 
-		include('class/mysql_crud.php');
-		$db = new Database();
-		$db->connect();
-		$enrollnum1 = 3;
-		$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-		//print($enString);
-		$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName,FatherName,Gender,DateOfBirth,Address_Present,Address_Permanant,Religion,Sect,HafizeQuran,Cast,SubCast',NULL, $enString,'ClassID DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
-		$res = $db->getResult();
-		//print_r($res);
+			include('class/mysql_crud.php');
+			$db = new Database();
+			$db->connect();
+			$enString = 'EnrollmentNumber="'.$enrollnum.'"';
+			$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName,FatherName,Gender,DateOfBirth,Address_Present,Address_Permanant,Religion,Sect,HafizeQuran,Cast,SubCast',NULL, $enString,'ClassID DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+			$res = $db->getResult();
+			//print_r($res);
 		}
 		if (count($res) > 0) {
 	
