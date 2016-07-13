@@ -33,6 +33,7 @@ $enrollnumErr = "";
 $enrollnum = "";
 $dateSubErr = "";
 $dateSub;
+$classname = $section = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
@@ -41,12 +42,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $dateSub = test_input($_POST["dateSub"]);
   }
+		
+		if (empty($_POST["classname"])) {
+			$classnameErr = "Class is required";
+		} else {
+			$classname = test_input($_POST["classname"]);
+		}
+  
+		if (empty($_POST["section"])) {
+			$sectErr = "";
+		} else {
+			$section = test_input($_POST["section"]);
+		}
   
   try{
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
-	$enString = 'DateToday="'.$dateSub.'"';
+	$enString = 'DateToday="'.$dateSub.'" AND ClassName="'.$classname.'" AND Section="'.$section.'"';
 	$db->delete('studentattendance',$enString);  // Table name, WHERE conditions
 	$res = $db->getResult();  
 	//print_r($res);

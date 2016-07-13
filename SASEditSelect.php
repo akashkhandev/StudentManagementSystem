@@ -18,10 +18,8 @@ $dateToday;
 		}else {
 			$dateToday = test_input($_POST["dateToday"]);
 		}
-  
-		if(!empty($enrollnum))
-		{
 
+	try{
 		include('class/mysql_crud.php');
 		$db = new Database();
 		$db->connect();
@@ -29,7 +27,12 @@ $dateToday;
 		$db->select('studentattendance','DateToday, EnrollmentNumber, Status, Reason,ClassName,Section',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 		$res = $db->getResult();
 		//print_r($res);
-		}
+		
+  }
+  catch(Exception $e) {
+	echo $e->getMessage();
+	}
+}
 		if (count($res) > 0) {
 	
 			$dateToday = $res[0]['DateToday'];
@@ -42,10 +45,8 @@ $dateToday;
 			$_SESSION['enrollnum'] = $enrollnum;
 			$_SESSION['dateToday'] = $dateToday;
 		}
-		else{
-			die("Data not found");
-		}
-	}
+		
+	
 	
 	
 

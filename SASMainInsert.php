@@ -82,9 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollArray[$j],'Status'=>$statusArray[$j],'Reason'=>$reasonArray[$j],'DateToday'=>$dateToday,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
 				
 				$res = $db->getResult();  
-				print($enrollArray[$j]."\n");
+				/*print($enrollArray[$j]."\n");
 				print($statusArray[$j]."\n");
-				print($reasonArray[$j]."\n");
+				print($reasonArray[$j]."\n");*/
 			}
 	}
 	else{

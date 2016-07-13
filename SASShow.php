@@ -4,7 +4,7 @@
 
 <?php
 $enrollnumErr = "";
-$enrollnum = "";
+$enrollnum = $datemonth = $dateyear = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["enrollnum"])) {
@@ -12,13 +12,27 @@ $enrollnum = "";
 		}else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
+		
+		if (empty($_POST["datemonth"])) {
+			$datemonthErr = "Month is required";
+		}else {
+			$datemonth = test_input($_POST["datemonth"]);
+		}
+		
+		if (empty($_POST["dateyear"])) {
+			$dateyearErr = "Year is required";
+		}else {
+			$dateyear = test_input($_POST["dateyear"]);
+		}
 
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
-	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
+	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND month(DateToday)="'.$datemonth.'" AND year(DateToday)="'.$dateyear.'"';
+	//print_r($enString);
 	$db->select('studentattendance','EnrollmentNumber, DateToday, Status, Reason',NULL,$enString,'DateToday ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 	$res = $db->getResult();
+	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
 	$db->select('studentdata','FirstName, MiddleName, LastName',NULL,$enString,'ClassID ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 	$resName = $db->getResult();
 	//print_r($res);
