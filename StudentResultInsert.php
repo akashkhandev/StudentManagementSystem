@@ -43,12 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
-  if (empty($_POST["sname"])) {
-    $sname = "Student Name is required";
-  } else {
-    $sname = test_input($_POST["sname"]);
-  }
-  
   if (empty($_POST["classname"])) {
     $classnameErr = "Class is required";
   } else {
@@ -143,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
-	$db->insert('studentresult',array('EnrollmentNumber'=>$enrollnum,'SName'=>$sname,'Class'=>$classname,'Section'=>$sect,'Term'=>$term, 'ExamDate'=>$examdate, 'TName'=>$tname, 'Sub1'=>$sub1, 'TSub1'=>$tsub1, 'Sub2'=>$sub2, 'TSub2'=>$tsub2, 'Sub3'=>$sub3,'TSub3'=>$tsub3,'Sub4'=>$sub4,'TSub4'=>$tsub4,'Sub5'=>$sub5,'TSub5'=>$tsub5));  // Table name, column names and respective values
+	$db->insert('studentresult',array('EnrollmentNumber'=>$enrollnum,'Class'=>$classname,'Section'=>$sect,'Term'=>$term, 'ExamDate'=>$examdate, 'TName'=>$tname, 'Sub1'=>$sub1, 'TSub1'=>$tsub1, 'Sub2'=>$sub2, 'TSub2'=>$tsub2, 'Sub3'=>$sub3,'TSub3'=>$tsub3,'Sub4'=>$sub4,'TSub4'=>$tsub4,'Sub5'=>$sub5,'TSub5'=>$tsub5));  // Table name, column names and respective values
 	$res = $db->getResult();  
   }
   catch(Exception $e) {

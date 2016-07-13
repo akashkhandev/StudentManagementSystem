@@ -7,7 +7,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen" />
-    <link href="favicon.png" type="image/png"  />
+    <link href="../favicon.png" type="image/png"  />
 <!-- Javascript -->
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/ddsmoothmenu.js" type="text/javascript"></script>
@@ -32,9 +32,6 @@
 <form id="studentform" action="StudentResultInsert.php" method="post">
   Student Enrollment Number:<br>
   <input type="text" name="enrollnum" required>
-  <br>
-  Student Name:<br>
-  <input type="text" name="sname" required>
   <br>
   Class:<br>
 	<select name="classname">
@@ -65,8 +62,8 @@
       <option value="Final Term">Final Term</option>
     </select>
   </br>
-  Examination Date:<br>
-  <input type="date" name="examdate" required>
+  Examination Month:<br>
+  <input type="number" name="examdate" min="1980" max="2099" required>
   </br>
   Teacher Name:<br>
   <input type="text" name="tname" required>

@@ -32,7 +32,7 @@
 <div class="pure-menu pure-menu-horizontal">
     <a href="SASShowForm.php" class="pure-menu-heading pure-menu-link">Show Data</a>
     <a href="SASShowFormDate.php" class="pure-menu-heading pure-menu-link">Show Data By Date</a>
-    <a href="SASMainForm.php" class="pure-menu-heading pure-menu-link">Insert</a>
+    <a href="SASMainFormClass.php" class="pure-menu-heading pure-menu-link">Insert</a>
     <a href="SASMainFormStudent.php" class="pure-menu-heading pure-menu-link">Insert (Only One)</a>
     <a href="SASGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a>
     <a href="SASDeleteFormEN.php" class="pure-menu-heading pure-menu-link">Delete EN</a>

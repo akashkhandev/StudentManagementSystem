@@ -21,8 +21,6 @@
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
-<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">	
 
 	
 </head>
@@ -30,13 +28,49 @@
 
 <?php include 'menu.php';?>
 
-	<?php
-		include_once('StudentResultSelect.php');
-	?>
+<div id="formId">
+<form id="studentform" action="StudentResultAllClassTable.php" method="post">
+  <div id="formname" class = "SFormItem">
+  Class:<br>
+	<select name="classname">
+      <option value="Kachi">Kachi</option>
+      <option value="Grade 1">Grade 1</option>
+      <option value="Grade 2">Grade 2</option>
+      <option value="Grade 3">Grade 3</option>
+      <option value="Grade 4">Grade 4</option>
+      <option value="Grade 5">Grade 5</option>
+      <option value="Grade 6">Grade 6</option>
+      <option value="Grade 7">Grade 7</option>
+      <option value="Grade 8">Grade 8</option>
+      <option value="Grade 9">Grade 9</option>
+      <option value="Grade 10">Grade 10</option>
+    </select>
+  </br>
+  Section:<br>
+	<select name="sect">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+  </br>
+  Term:<br>
+	<select name="term">
+      <option value="Mid Term">Mid Term</option>
+      <option value="Final Term">Final Term</option>
+    </select>
+  </br>
+  Examination Year:<br>
+  <input type="number" name="examdate" min="1980" max="2099" required>
+  </br>
+  </div>
+  <div id="formsubmit" class = "SFormItem">
+  <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
 
-	
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
-	
 </body>
 </html>

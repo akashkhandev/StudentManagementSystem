@@ -36,6 +36,7 @@
   <input type="date" name="dateToday" required>
   </div><br>
   
+  
   <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
   </div>

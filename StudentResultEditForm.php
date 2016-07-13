@@ -37,9 +37,6 @@
   Student Enrollment Number:<br>
   <input type="text" name="enrollnum" value="<?php echo $enrollnum; ?>" required>
   <br>
-  Student Name:<br>
-  <input type="text" name="sname" value="<?php echo $sname; ?>" required>
-  <br>
   Class:<br>
 	<select name="classname">
       <option value="Kachi" <?php if ($classname == 'Kachi') echo ' selected="selected"'; ?>>Kachi</option>
@@ -69,8 +66,8 @@
       <option value="Final Term" <?php if ($term == 'Final Term') echo ' selected="selected"'; ?>>Final Term</option>
     </select>
   </br>
-  Examination Date:<br>
-  <input type="date" name="examdate" value="<?php echo $examdate; ?>" required>
+  Examination Year:<br>
+  <input type="number" name="examdate" min="1980" max="2099" value="<?php echo $examdate; ?>" required>
   </br>
   Teacher Name:<br>
   <input type="text" name="tname" value="<?php echo $tname; ?>" required>

@@ -37,6 +37,8 @@ $statusArray = array();
 $reasonArray = array();
 
 $enrollArray = $_SESSION['enrollArray'];
+$classname = $_SESSION['classname'];
+$section = $_SESSION['section'];
 //print_r($enrollArray);
 
 if(count($enrollArray) > 0){
@@ -77,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$db = new Database();
 			$db->connect(); // Escape any input before insert
 			for($j=0; $j<count($enrollArray); $j++){
-				$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollArray[$j],'Status'=>$statusArray[$j],'Reason'=>$reasonArray[$j],'DateToday'=>$dateToday));  // Table name, column names and respective values
+				$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollArray[$j],'Status'=>$statusArray[$j],'Reason'=>$reasonArray[$j],'DateToday'=>$dateToday,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
 				
 				$res = $db->getResult();  
 				print($enrollArray[$j]."\n");

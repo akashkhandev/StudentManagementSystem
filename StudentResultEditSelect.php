@@ -3,7 +3,7 @@
 <?php
 
 $enrollnumErr = "";
-$enrollnum = $sname = $sect = $classname = $tname = "";
+$enrollnum = $sect = $classname = $tname = "";
 $sub1; $tsub1; $sub2; $tsub2; $sub3; $tsub3; $sub4; $tsub4; $sub5; $tsub5;
 $examdate;
 
@@ -36,14 +36,13 @@ $examdate;
 		$db = new Database();
 		$db->connect();
 		$enString = 'EnrollmentNumber="'.$enrollnum.'" AND Class="'.$classname.'" AND Section="'.$sect.'" AND Term="'.$term.'"';
-		$db->select('studentresult','EnrollmentNumber, SName, Class, Section, Term, ExamDate, TName, Sub1, TSub1, Sub2, TSub2, Sub3, TSub3, Sub4, TSub4, Sub5, TSub5',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+		$db->select('studentresult','EnrollmentNumber, Class, Section, Term, ExamDate, TName, Sub1, TSub1, Sub2, TSub2, Sub3, TSub3, Sub4, TSub4, Sub5, TSub5',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 		$res = $db->getResult();
 		//print_r($res);
 		}
 		if (count($res) > 0) {
 	
 			$enrollnum = $res[0]['EnrollmentNumber'];
-			$sname = $res[0]['SName'];
 			$classname = $res[0]['Class'];
 			$term = $res[0]['Term'];
 			$sect = $res[0]['Section'];

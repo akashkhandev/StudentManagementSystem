@@ -47,12 +47,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reason = test_input($_POST["reason"]);
   }
   
+  
+		if (empty($_POST["classname"])) {
+			$classnameErr = "Class is required";
+		} else {
+			$classname = test_input($_POST["classname"]);
+		}
+  
+		if (empty($_POST["sect"])) {
+			$sectErr = "";
+		} else {
+			$sect = test_input($_POST["sect"]);
+		}
+  
   try{
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND DateToday="'.$dateToday.'"';
-	$db->update('studentattendance',array('Status'=>$status,'Reason'=>$reason), $enString); // Table name, column names and values, WHERE conditions
+	$db->update('studentattendance',array('Status'=>$status,'Reason'=>$reason,'ClassName'=>$classname,'Section'=>$section), $enString); // Table name, column names and values, WHERE conditions
 	$res = $db->getResult();
 	//print_r($res);
 	  

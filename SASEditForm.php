@@ -45,6 +45,30 @@
   Reason (if Leave):<br>
   <input type="text" name="reason" value="<?php echo $reason; ?>">
   <br>
+  Class:<br>
+	<select name="classname">
+      <option value="Kachi" <?php if ($classname == 'Kachi') echo ' selected="selected"'; ?>>Kachi</option>
+      <option value="Grade 1" <?php if ($classname == 'Grade 1') echo ' selected="selected"'; ?>>Grade 1</option>
+      <option value="Grade 2" <?php if ($classname == 'Grade 2') echo ' selected="selected"'; ?>>Grade 2</option>
+      <option value="Grade 3" <?php if ($classname == 'Grade 3') echo ' selected="selected"'; ?>>Grade 3</option>
+      <option value="Grade 4" <?php if ($classname == 'Grade 4') echo ' selected="selected"'; ?>>Grade 4</option>
+      <option value="Grade 5" <?php if ($classname == 'Grade 5') echo ' selected="selected"'; ?>>Grade 5</option>
+      <option value="Grade 6" <?php if ($classname == 'Grade 6') echo ' selected="selected"'; ?>>Grade 6</option>
+      <option value="Grade 7" <?php if ($classname == 'Grade 7') echo ' selected="selected"'; ?>>Grade 7</option>
+      <option value="Grade 8" <?php if ($classname == 'Grade 8') echo ' selected="selected"'; ?>>Grade 8</option>
+      <option value="Grade 9" <?php if ($classname == 'Grade 9') echo ' selected="selected"'; ?>>Grade 9</option>
+      <option value="Grade 10" <?php if ($classname == 'Grade 10') echo ' selected="selected"'; ?>>Grade 10</option>
+    </select>
+  </br>
+  Section:<br>
+	<select name="section">
+      <option value="A" <?php if ($section == 'A') echo ' selected="selected"'; ?>>A</option>
+      <option value="B" <?php if ($section == 'B') echo ' selected="selected"'; ?>>B</option>
+      <option value="C" <?php if ($section == 'C') echo ' selected="selected"'; ?>>C</option>
+      <option value="D" <?php if ($section == 'D') echo ' selected="selected"'; ?>>D</option>
+    </select>
+  </br>
+  </br>
   <input type="submit" value="Submit">
   </form>
   </div>

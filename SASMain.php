@@ -5,14 +5,29 @@
 <?php
 
 
-$name = $fname = $age = $nationality = $address = $city = $contact = $email = "";
+$name = $fname = $age = $nationality = $address = $city = $contact = $email = $classname = $section = "";
 $enrollArray = array();
 
-
+	
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		
+		if (empty($_POST["classname"])) {
+			$classnameErr = "Class is required";
+		} else {
+			$classname = test_input($_POST["classname"]);
+		}
+  
+		if (empty($_POST["sect"])) {
+			$sectErr = "";
+		} else {
+			$sect = test_input($_POST["sect"]);
+		}
+		
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
-	$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName',NULL,NULL,'ClassID ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+	$enString = 'ClassName="'.$classname.'" AND Section="'.$sect.'"';
+	$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName',NULL,$enString,'ClassID ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 	$res = $db->getResult();
 	//print_r($res);
 
@@ -30,11 +45,22 @@ $enrollArray = array();
 			array_push($enrollArray, $res[$x]["EnrollmentNumber"]);
 		}
 		echo "</table>";
+		
+		$_SESSION['classname'] = $classname;
+		$_SESSION['section'] = $section;
 		$_SESSION['enrollArray'] = $enrollArray;
  
-	}else {
-		die("Data not found");
 	}
+	
+	}
+	
+	
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 ?>
 
 

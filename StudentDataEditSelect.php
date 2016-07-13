@@ -3,7 +3,7 @@
 <?php
 
 	$enrollnumErr = $firstnameErr = $middlenameErr = $lastnameErr = $fathernameErr = $genderErr = $dobErr = $add_preErr = $add_perErr = $religionErr = $sectErr = $hafizErr = $castErr = $subcastErr = "";
-	$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = "";
+	$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = $classname = $section = "";
 	$dob;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,7 +20,7 @@
 			$db = new Database();
 			$db->connect();
 			$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-			$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName,FatherName,Gender,DateOfBirth,Address_Present,Address_Permanant,Religion,Sect,HafizeQuran,Cast,SubCast',NULL, $enString,'ClassID DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+			$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName,FatherName,Gender,DateOfBirth,Address_Present,Address_Permanant,Religion,Sect,HafizeQuran,Cast,SubCast,ClassName,Section',NULL, $enString,'ClassID DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 			$res = $db->getResult();
 			//print_r($res);
 		}
@@ -40,13 +40,13 @@
 			$hafiz = $res[0]['HafizeQuran'];
 			$cast = $res[0]['Cast'];
 			$subcast = $res[0]['SubCast'];
+			$classname = $res[0]['ClassName'];
+			$section = $res[0]['Section'];
 		}
 		else{
 			 die("Data not found");
 		}
 	}
-	
-	
 
 function test_input($data) {
   $data = trim($data);

@@ -30,21 +30,15 @@
 
 <?php
 
-$enrollnumErr = $firstnameErr = $middlenameErr = $lastnameErr = $fathernameErr = $genderErr = $dobErr = $add_preErr = $add_perErr = $religionErr = $sectErr = $hafizErr = $castErr = $subcastErr = "";
-$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = "";
-$dob;
+$enrollnumErr = "";
+$enrollnum = $sect = $classname = $tname = "";
+$sub1; $tsub1; $sub2; $tsub2; $sub3; $tsub3; $sub4; $tsub4; $sub5; $tsub5;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
     $enrollnumErr = "Enroll. Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
-  }
-  
-  if (empty($_POST["sname"])) {
-    $snameErr = "Student Name is required";
-  } else {
-    $sname = test_input($_POST["sname"]);
   }
   
   if (empty($_POST["classname"])) {
@@ -142,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db = new Database();
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND Class="'.$classname.'" AND Section="'.$sect.'" AND Term="'.$term.'"';
-	$db->update('studentresult',array('EnrollmentNumber'=>$enrollnum,'SName'=>$sname,'Class'=>$classname,'Section'=>$sect,'Term'=>$term, 'ExamDate'=>$examdate, 'TName'=>$tname, 'Sub1'=>$sub1, 'TSub1'=>$tsub1, 'Sub2'=>$sub2, 'TSub2'=>$tsub2, 'Sub3'=>$sub3,'TSub3'=>$tsub3,'Sub4'=>$sub4,'TSub4'=>$tsub4,'Sub5'=>$sub5,'TSub5'=>$tsub5), $enString); // Table name, column names and values, WHERE conditions
+	$db->update('studentresult',array('EnrollmentNumber'=>$enrollnum,'Class'=>$classname,'Section'=>$sect,'Term'=>$term, 'ExamDate'=>$examdate, 'TName'=>$tname, 'Sub1'=>$sub1, 'TSub1'=>$tsub1, 'Sub2'=>$sub2, 'TSub2'=>$tsub2, 'Sub3'=>$sub3,'TSub3'=>$tsub3,'Sub4'=>$sub4,'TSub4'=>$tsub4,'Sub5'=>$sub5,'TSub5'=>$tsub5), $enString); // Table name, column names and values, WHERE conditions
 	$res = $db->getResult();
 	//print_r($res);
 	  

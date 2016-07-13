@@ -32,11 +32,12 @@
 <?php include 'menu.php';?>
 
 <div class="pure-menu pure-menu-horizontal">
-    <a href="StudentResultSelectTable.php" class="pure-menu-heading pure-menu-link">Show Data</a>
     <a href="StudentResultInsertForm.php" class="pure-menu-heading pure-menu-link">Insert</a>
     <a href="StudentResultGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a>
     <a href="StudentResultDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete</a>
+    <a href="StudentResultAllClassForm.php" class="pure-menu-heading pure-menu-link">Show Class Result</a>
     <a href="StudentResultShowForm.php" class="pure-menu-heading pure-menu-link">Show Student Result</a>
+    <a href="StudentResultAllStudentForm.php" class="pure-menu-heading pure-menu-link">Show Student All Results</a>
 </div>
 
 <!-- Footer Section -->

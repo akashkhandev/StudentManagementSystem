@@ -30,7 +30,7 @@
 
 <?php 
 
-$enrollnumErr = $statusErr = $reasonErr = $dateTodayErr = "";
+$enrollnumErr = $statusErr = $reasonErr = $dateTodayErr = $classname = $section = "";
 $enrollnum = $status = $reason = "";
 $dateToday;
 
@@ -59,12 +59,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $reason = test_input($_POST["reason"]);
   }
+		
+		if (empty($_POST["classname"])) {
+			$classnameErr = "Class is required";
+		} else {
+			$classname = test_input($_POST["classname"]);
+		}
+  
+		if (empty($_POST["sect"])) {
+			$sectErr = "";
+		} else {
+			$sect = test_input($_POST["sect"]);
+		}
   
   try{
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
-	$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollnum,'DateToday'=>$dateToday,'Status'=>$status,'Reason'=>$reason));  // Table name, column names and respective values
+	$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollnum,'DateToday'=>$dateToday,'Status'=>$status,'Reason'=>$reason'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
 	$res = $db->getResult();  
 	//print_r($res);
 	  

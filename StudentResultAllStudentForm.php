@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Charter for compassion | EMIS</title>
 <!-- Stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
@@ -22,37 +27,21 @@
 <body>
 
 <?php include 'menu.php';?>
-<?php
 
-$enrollnumErr = "";
-$enrollnum ;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enrollment Number is required";
-  } else {
-    $enrollnum = test_input($_POST["enrollnum"]);
-  }
-	include('class/mysql_crud.php');
-	$db = new Database();
-	$db->connect();
-	$enString = 'EnrollmentNumber='.$enrollnum;
-	$db->delete('studentdata',$enString);  // Table name, WHERE conditions
-	$res = $db->getResult();  
-	//print_r($res);
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
+<div id="formId">
+<form id="studentform" action="StudentResultAllStudentTable.php" method="post">
+  <div id="formname" class = "SFormItem">
+  Enrollment Number:<br>
+  <input type="text" name="enrollnum" required>
+  </div><br>
+  
+  <div id="formsubmit" class = "SFormItem">
+  <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
-
-
 </body>
 </html>

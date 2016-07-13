@@ -31,7 +31,7 @@
 <?php
 
 $enrollnumErr = $firstnameErr = $middlenameErr = $lastnameErr = $fathernameErr = $genderErr = $dobErr = $add_preErr = $add_perErr = $religionErr = $sectErr = $hafizErr = $castErr = $subcastErr = "";
-$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = "";
+$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = $section = $classname = "";
 $dob;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -120,10 +120,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subcast = test_input($_POST["subcast"]);
   }
   
-	include('class/mysql_crud.php');
+  if (empty($_POST["classname"])) {
+    $classnameErr = "Class is required";
+  } else {
+    $classname = test_input($_POST["classname"]);
+  }
+  
+  if (empty($_POST["section"])) {
+    
+  } else {
+    $section = test_input($_POST["section"]);
+  }
+  
+	include('../class/mysql_crud.php');
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
-	$db->insert('studentdata',array('EnrollmentNumber'=>$enrollnum,'FirstName'=>$firstname,'MiddleName'=>$middlename,'LastName'=>$lastname, 'FatherName'=>$fathername, 'Gender'=>$gender, 'DateOfBirth'=>$dob, 'Address_Present'=>$add_pre, 'Address_Permanant'=>$add_per, 'Religion'=>$religion, 'Sect'=>$sect,'HafizeQuran'=>$hafiz,'Cast'=>$cast,'SubCast'=>$subcast));  // Table name, column names and respective values
+	$db->insert('studentdata',array('EnrollmentNumber'=>$enrollnum,'FirstName'=>$firstname,'MiddleName'=>$middlename,'LastName'=>$lastname, 'FatherName'=>$fathername, 'Gender'=>$gender, 'DateOfBirth'=>$dob, 'Address_Present'=>$add_pre, 'Address_Permanant'=>$add_per, 'Religion'=>$religion, 'Sect'=>$sect,'HafizeQuran'=>$hafiz,'Cast'=>$cast,'SubCast'=>$subcast,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
 	$res = $db->getResult();  
 	//print_r($res);
 }
@@ -138,7 +150,7 @@ function test_input($data) {
 ?>
 
 <!-- Footer Section -->
-<?php include 'footer.php' ?>
+<?php include '../footer.php' ?>
 
 </body>
 </html>

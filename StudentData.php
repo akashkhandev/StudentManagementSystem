@@ -32,7 +32,7 @@
 <?php include 'menu.php';?>
 
 <div class="pure-menu pure-menu-horizontal">
-    <a href="StudentDataSelectTable.php" class="pure-menu-heading pure-menu-link">Show Data</a>
+    <a href="StudentDataSelectForm.php" class="pure-menu-heading pure-menu-link">Show Data</a>
     <a href="StudentDataInsertForm.php" class="pure-menu-heading pure-menu-link">Insert</a>
     <a href="StudentDataGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a>
     <a href="StudentDataDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete</a>

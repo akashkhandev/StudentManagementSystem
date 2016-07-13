@@ -4,7 +4,7 @@
 
 
 $dateErr = $enrollnumErr = $statusErr = $reasonErr = "";
-$enrollnum = $status = $reason = "";
+$enrollnum = $status = $reason = $classname = $section = "";
 $dateToday;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,7 +26,7 @@ $dateToday;
 		$db = new Database();
 		$db->connect();
 		$enString = 'EnrollmentNumber="'.$enrollnum.'" AND DateToday="'.$dateToday.'"';
-		$db->select('studentattendance','DateToday, EnrollmentNumber, Status, Reason',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+		$db->select('studentattendance','DateToday, EnrollmentNumber, Status, Reason,ClassName,Section',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 		$res = $db->getResult();
 		//print_r($res);
 		}
@@ -36,6 +36,8 @@ $dateToday;
 			$enrollnum = $res[0]['EnrollmentNumber'];
 			$status = $res[0]['Status'];
 			$reason = $res[0]['Reason'];
+			$classname = $res[0]['ClassName'];
+			$section = $res[0]['Section'];
 			
 			$_SESSION['enrollnum'] = $enrollnum;
 			$_SESSION['dateToday'] = $dateToday;

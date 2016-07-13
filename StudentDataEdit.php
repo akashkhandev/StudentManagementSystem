@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Charter for compassion | EMIS</title>
 <!-- Stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
@@ -26,7 +31,7 @@
 <?php
 
 $enrollnumErr = $firstnameErr = $middlenameErr = $lastnameErr = $fathernameErr = $genderErr = $dobErr = $add_preErr = $add_perErr = $religionErr = $sectErr = $hafizErr = $castErr = $subcastErr = "";
-$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = "";
+$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = $classname = $section = "";
 $dob;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -114,11 +119,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subcast = test_input($_POST["subcast"]);
   }
   
+  if (empty($_POST["classname"])) {
+    $classnameErr = "Class is required";
+  } else {
+    $classname = test_input($_POST["classname"]);
+  }
+  
+  if (empty($_POST["section"])) {
+    
+  } else {
+    $section = test_input($_POST["section"]);
+  }
+  
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-	$db->update('studentdata',array('EnrollmentNumber'=>$enrollnum,'FirstName'=>$firstname,'MiddleName'=>$middlename,'LastName'=>$lastname, 'FatherName'=>$fathername, 'Gender'=>$gender, 'DateOfBirth'=>$dob, 'Address_Present'=>$add_pre, 'Address_Permanant'=>$add_per, 'Religion'=>$religion, 'Sect'=>$sect,'HafizeQuran'=>$hafiz,'Cast'=>$cast,'SubCast'=>$subcast), $enString); // Table name, column names and values, WHERE conditions
+	$db->update('studentdata',array('EnrollmentNumber'=>$enrollnum,'FirstName'=>$firstname,'MiddleName'=>$middlename,'LastName'=>$lastname, 'FatherName'=>$fathername, 'Gender'=>$gender, 'DateOfBirth'=>$dob, 'Address_Present'=>$add_pre, 'Address_Permanant'=>$add_per, 'Religion'=>$religion, 'Sect'=>$sect,'HafizeQuran'=>$hafiz,'Cast'=>$cast,'SubCast'=>$subcast,'ClassName'=>$classname,'Section'=>$section), $enString); // Table name, column names and values, WHERE conditions
 	$res = $db->getResult();
 	//print_r($res);
 }

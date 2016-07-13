@@ -8,7 +8,7 @@
 	$sub1 = $tsub1 = $sub2 = $tsub2 = $sub3 = $tsub3 = $sub4 = $tsub4 = $sub5 = $tsub5 = 0;
 	$examdate;
 
-	include('class/mysql_crud.php');
+	include('../class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
 	$db->select('studentresult','EnrollmentNumber, SName, Class, Section, ExamDate, TName, Sub1, TSub1, Sub2, TSub2, Sub3, TSub3, Sub4, TSub4, Sub5, TSub5',NULL,NULL,'id ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
