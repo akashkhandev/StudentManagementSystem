@@ -21,9 +21,6 @@
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
-<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">	
-
 
 	
 </head>
@@ -31,13 +28,17 @@
 
 <?php include 'menu.php';?>
 
-<div class="pure-menu pure-menu-horizontal">
-    <a href="StudentResultInsertForm.php" class="pure-menu-heading pure-menu-link">Insert Data</a><br>
-    <a href="StudentResultGetENForm.php" class="pure-menu-heading pure-menu-link">Update Data</a><br>
-    <a href="StudentResultDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete Data</a><br>
-    <a href="StudentResultAllClassForm.php" class="pure-menu-heading pure-menu-link">Show Class Result</a><br>
-    <a href="StudentResultShowForm.php" class="pure-menu-heading pure-menu-link">Show Student Result</a><br>
-    <a href="StudentResultAllStudentForm.php" class="pure-menu-heading pure-menu-link">Show Student All Results</a>
+<div id="formId">
+<form id="studentform" action="SMSHDelete.php" method="post">
+  <div id="formname" class = "SFormItem">
+  Enrollment Number:<br>
+  <input type="text" name="enrollnum" required>
+  </div><br>
+  
+  <div id="formsubmit" class = "SFormItem">
+  <input type="submit" value="Submit">
+  </div>
+</form>
 </div>
 
 <!-- Footer Section -->

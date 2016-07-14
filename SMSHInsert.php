@@ -30,49 +30,67 @@
 
 <?php
 
-$enrollnumErr = "";
-$enrollnum = "";
+$enrollnum = $phydis = $anydis = $tre = $tresch = "";
+ $age = $height = $weight = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enrollment Number is required";
+    $enrollnumErr = "Enroll. Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
-  if (empty($_POST["classname"])) {
-    $classnameErr = "Class is required";
+  if (empty($_POST["age"])) {
+    $ageErr = "age is required";
   } else {
-    $classname = test_input($_POST["classname"]);
+    $age = test_input($_POST["age"]);
   }
   
-  if (empty($_POST["sect"])) {
-    $sectErr = "";
+  if (empty($_POST["height"])) {
+    $height = "height is required";
   } else {
-    $sect = test_input($_POST["sect"]);
+    $height = test_input($_POST["height"]);
   }
   
-  if (empty($_POST["term"])) {
-    $termErr = "";
+  if (empty($_POST["weight"])) {
+    $weightErr = "weight is required";
   } else {
-    $term = test_input($_POST["term"]);
+    $weight = test_input($_POST["weight"]);
+  }
+
+  if (empty($_POST["phydis"])) {
+	$phydis = "N/A";
+  } else {
+    $phydis = test_input($_POST["phydis"]);
+  }
+
+  if (empty($_POST["anydis"])) {
+    $anydis = "N/A";
+  } else {
+    $anydis = test_input($_POST["anydis"]);
+  }
+
+  if (empty($_POST["tre"])) {
+    $tre = "N/A";
+  } else {
+    $tre = test_input($_POST["tre"]);
+  }
+
+  if (empty($_POST["tresch"])) {
+    $tresch = "N/A";
+  } else {
+    $tresch = test_input($_POST["tresch"]);
   }
   
-  try{
 	include('class/mysql_crud.php');
 	$db = new Database();
-	$db->connect();
-	
-	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND Class="'.$classname.'" AND Section="'.$sect.'" AND Term="'.$term.'"';
-	$db->delete('studentresult',$enString);  // Table name, WHERE conditions
+	$db->connect(); // Escape any input before insert
+	$db->insert('healthinformation',array('EnrollmentNumber'=>$enrollnum,'Age'=>$age,'Height'=>$height,'Weight'=>$weight, 'PhysicalDisablility'=>$phydis, 'AnyDisease'=>$anydis, 'MedicalTreatment'=>$tre, 'MedicalTreatmentinschool'=>$tresch));  // Table name, column names and respective values
 	$res = $db->getResult();  
 	//print_r($res);
-  }
-  catch(Exception $e) {
-	echo $e->getMessage();
-	}
-	
 }
+
 
 function test_input($data) {
   $data = trim($data);
@@ -82,10 +100,8 @@ function test_input($data) {
 }
 ?>
 
-
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
-
 
 </body>
 </html>

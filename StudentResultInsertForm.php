@@ -62,7 +62,7 @@
       <option value="Final Term">Final Term</option>
     </select>
   </br>
-  Examination Month:<br>
+  Examination Year:<br>
   <input type="number" name="examdate" min="1980" max="2099" required>
   </br>
   Teacher Name:<br>

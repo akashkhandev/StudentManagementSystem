@@ -48,9 +48,9 @@
   <input type="text" name="fathername" value="<?php echo $fathername; ?>" required>
   </br>
   Gender:<br>
-	<select name="gender" value="<?php echo $gender; ?>">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+	<select name="gender">
+      <option value="Male" <?php if ($gender == 'Male') echo ' selected="selected"'; ?>>Male</option>
+      <option value="Female" <?php if ($gender == 'Female') echo ' selected="selected"'; ?>>Female</option>
     </select>
   </br>
   Date of Birth:<br>
@@ -69,9 +69,9 @@
   <input type="text" name="sect" value="<?php echo $sect; ?>" >
   <br>
   HafizeQuran:<br>
-  <select name="hafiz" value="<?php echo $hafiz; ?>">
-      <option value="No">No</option>
-      <option value="Yes">Yes</option>
+  <select name="hafiz">
+      <option value="No" <?php if ($hafiz == 'No') echo ' selected="selected"'; ?>>No</option>
+      <option value="Yes" <?php if ($hafiz == 'Yes') echo ' selected="selected"'; ?>>Yes</option>
     </select>
   <br>
   Cast:<br>

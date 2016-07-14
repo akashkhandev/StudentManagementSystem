@@ -31,9 +31,10 @@
 <?php include 'menu.php';?>
 
 <div class="pure-menu pure-menu-horizontal">
-    <a href="StudentData.php" class="pure-menu-heading pure-menu-link">Student Data</a>
-    <a href="SAS.php" class="pure-menu-heading pure-menu-link">Student Attendance</a>
-    <a href="StudentResult.php" class="pure-menu-heading pure-menu-link">Student Result</a>
+    <a href="StudentData.php" class="pure-menu-heading pure-menu-link">Student Data</a><br>
+    <a href="SAS.php" class="pure-menu-heading pure-menu-link">Student Attendance</a><br>
+    <a href="StudentResult.php" class="pure-menu-heading pure-menu-link">Student Result</a><br>
+    <a href="SMSH.php" class="pure-menu-heading pure-menu-link">Student Health</a>
 </div>
 
 <!-- Footer Section -->

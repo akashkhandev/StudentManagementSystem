@@ -47,7 +47,7 @@
     </select>
   </br>
   Section:<br>
-	<select name="sect">
+	<select name="section">
       <option value="A">A</option>
       <option value="B">B</option>
       <option value="C">C</option>

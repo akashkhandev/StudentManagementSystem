@@ -21,23 +21,40 @@
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
-<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">	
-
 
 	
 </head>
 <body>
 
 <?php include 'menu.php';?>
-
-<div class="pure-menu pure-menu-horizontal">
-    <a href="StudentResultInsertForm.php" class="pure-menu-heading pure-menu-link">Insert Data</a><br>
-    <a href="StudentResultGetENForm.php" class="pure-menu-heading pure-menu-link">Update Data</a><br>
-    <a href="StudentResultDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete Data</a><br>
-    <a href="StudentResultAllClassForm.php" class="pure-menu-heading pure-menu-link">Show Class Result</a><br>
-    <a href="StudentResultShowForm.php" class="pure-menu-heading pure-menu-link">Show Student Result</a><br>
-    <a href="StudentResultAllStudentForm.php" class="pure-menu-heading pure-menu-link">Show Student All Results</a>
+<div id="formId">
+<form id="studentform" action="SMSHInsert.php" method="post">
+  Enrollment Number:<br>
+  <input type="text" name="enrollnum" required>
+  <br>
+  Age:<br>
+  <input type="number" name="age" min="1" max="50" required>
+  <br>
+  Height(cm):<br>
+  <input type="number" name="height" min="1" max="250" required>
+  <br>
+  Weight(Kg):<br>
+  <input type="number" name="weight" min="1" max="200" required>
+  <br>
+  Physical Disablility:<br>
+  <input type="text" name="phydis">
+  <br>
+  Any Disease:<br>
+  <input type="text" name="anydis">
+  <br>
+  Medical Treatment:<br>
+  <input type="text" name="tre">
+  </br>
+  Medical Treatment in School:<br>
+  <input type="text" name="tresch">
+  </br>
+  <input type="submit" value="Submit" >
+</form>
 </div>
 
 <!-- Footer Section -->

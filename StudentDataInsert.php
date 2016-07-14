@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $section = test_input($_POST["section"]);
   }
   
-	include('../class/mysql_crud.php');
+	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
 	$db->insert('studentdata',array('EnrollmentNumber'=>$enrollnum,'FirstName'=>$firstname,'MiddleName'=>$middlename,'LastName'=>$lastname, 'FatherName'=>$fathername, 'Gender'=>$gender, 'DateOfBirth'=>$dob, 'Address_Present'=>$add_pre, 'Address_Permanant'=>$add_per, 'Religion'=>$religion, 'Sect'=>$sect,'HafizeQuran'=>$hafiz,'Cast'=>$cast,'SubCast'=>$subcast,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
@@ -150,7 +150,7 @@ function test_input($data) {
 ?>
 
 <!-- Footer Section -->
-<?php include '../footer.php' ?>
+<?php include 'footer.php' ?>
 
 </body>
 </html>

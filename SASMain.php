@@ -17,16 +17,16 @@ $enrollArray = array();
 			$classname = test_input($_POST["classname"]);
 		}
   
-		if (empty($_POST["sect"])) {
+		if (empty($_POST["section"])) {
 			$sectErr = "";
 		} else {
-			$sect = test_input($_POST["sect"]);
+			$section = test_input($_POST["section"]);
 		}
 		
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect();
-	$enString = 'ClassName="'.$classname.'" AND Section="'.$sect.'"';
+	$enString = 'ClassName="'.$classname.'" AND Section="'.$section.'"';
 	$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName',NULL,$enString,'ClassID ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 	$res = $db->getResult();
 	//print_r($res);

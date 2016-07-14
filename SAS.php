@@ -30,12 +30,12 @@
 <?php include 'menu.php';?>
 
 <div class="pure-menu pure-menu-horizontal">
-    <a href="SASShowForm.php" class="pure-menu-heading pure-menu-link">Show Data</a>
-    <a href="SASShowFormDate.php" class="pure-menu-heading pure-menu-link">Show Data By Date</a>
-    <a href="SASMainFormClass.php" class="pure-menu-heading pure-menu-link">Insert</a>
-    <a href="SASMainFormStudent.php" class="pure-menu-heading pure-menu-link">Insert (Only One)</a>
-    <a href="SASGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a>
-    <a href="SASDeleteFormEN.php" class="pure-menu-heading pure-menu-link">Delete EN</a>
+    <a href="SASShowForm.php" class="pure-menu-heading pure-menu-link">Show Data</a><br>
+    <a href="SASShowFormDate.php" class="pure-menu-heading pure-menu-link">Show Data By Date</a><br>
+    <a href="SASMainFormClass.php" class="pure-menu-heading pure-menu-link">Insert</a><br>
+    <a href="SASMainFormStudent.php" class="pure-menu-heading pure-menu-link">Insert (Only One)</a><br>
+    <a href="SASGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a><br>
+    <a href="SASDeleteFormEN.php" class="pure-menu-heading pure-menu-link">Delete EN</a><br>
     <a href="SASDeleteFormDate.php" class="pure-menu-heading pure-menu-link">Delete Date</a>
 </div>
 

@@ -23,8 +23,6 @@
 
 <link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">	
-
-
 	
 </head>
 <body>
@@ -32,13 +30,13 @@
 <?php include 'menu.php';?>
 
 <div class="pure-menu pure-menu-horizontal">
-    <a href="StudentResultInsertForm.php" class="pure-menu-heading pure-menu-link">Insert Data</a><br>
-    <a href="StudentResultGetENForm.php" class="pure-menu-heading pure-menu-link">Update Data</a><br>
-    <a href="StudentResultDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete Data</a><br>
-    <a href="StudentResultAllClassForm.php" class="pure-menu-heading pure-menu-link">Show Class Result</a><br>
-    <a href="StudentResultShowForm.php" class="pure-menu-heading pure-menu-link">Show Student Result</a><br>
-    <a href="StudentResultAllStudentForm.php" class="pure-menu-heading pure-menu-link">Show Student All Results</a>
+    <a href="SMSHSelectFormClass.php" class="pure-menu-heading pure-menu-link">Show Data Class</a><br>
+    <a href="SMSHSelectForm.php" class="pure-menu-heading pure-menu-link">Show Data</a><br>
+    <a href="SMSHInsertForm.php" class="pure-menu-heading pure-menu-link">Insert Data</a><br>
+    <a href="SMSHGetENForm.php" class="pure-menu-heading pure-menu-link">Update Data</a><br>
+    <a href="SMSHDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete Data</a><br>
 </div>
+
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>

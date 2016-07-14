@@ -21,9 +21,6 @@
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
 
-<link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">	
-
 
 	
 </head>
@@ -31,16 +28,45 @@
 
 <?php include 'menu.php';?>
 
-<div class="pure-menu pure-menu-horizontal">
-    <a href="StudentResultInsertForm.php" class="pure-menu-heading pure-menu-link">Insert Data</a><br>
-    <a href="StudentResultGetENForm.php" class="pure-menu-heading pure-menu-link">Update Data</a><br>
-    <a href="StudentResultDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete Data</a><br>
-    <a href="StudentResultAllClassForm.php" class="pure-menu-heading pure-menu-link">Show Class Result</a><br>
-    <a href="StudentResultShowForm.php" class="pure-menu-heading pure-menu-link">Show Student Result</a><br>
-    <a href="StudentResultAllStudentForm.php" class="pure-menu-heading pure-menu-link">Show Student All Results</a>
-</div>
+<?php
+
+$enrollnumErr = "";
+$enrollnum = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["enrollnum"])) {
+    $enrollnumErr = "Enrollment Number is required";
+  } else {
+    $enrollnum = test_input($_POST["enrollnum"]);
+  }
+  
+  try{
+  include('class/mysql_crud.php');
+	$db = new Database();
+	$db->connect();
+	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
+	$db->delete('healthinformation',$enString);  // Table name, WHERE conditions
+	$res = $db->getResult();  
+	//print_r($res);
+	  
+  }
+  catch(Exception $e) {
+	echo $e->getMessage();
+	}
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
+
+
 </body>
 </html>

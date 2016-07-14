@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	include('class/mysql_crud.php');
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
-	$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollnum,'DateToday'=>$dateToday,'Status'=>$status,'Reason'=>$reason'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
+	$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollnum,'DateToday'=>$dateToday,'Status'=>$status,'Reason'=>$reason,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
 	$res = $db->getResult();  
 	//print_r($res);
 	  

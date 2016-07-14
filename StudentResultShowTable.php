@@ -41,7 +41,7 @@
 	<h4>Term: <?php echo $term; ?></h4><br><br><br><br>
 	<table class='pure-table'>
 	<thead>
-	<tr><th>Examination Date</th>
+	<tr><th>Examination Year</th>
 	<th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th>
 	<th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th>
 	<th>Total Subject 5</th></tr>

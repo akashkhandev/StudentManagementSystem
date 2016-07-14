@@ -28,7 +28,7 @@
 <?php
 
 $dateTodayErr = $enrollnumErr = $statusErr = $reasonErr = "";
-$enrollnum = $status = $reason = "";
+$enrollnum = $status = $reason = $classname = $section = "";
 $dateToday;
 
 $enrollnum = $_SESSION['enrollnum'];
@@ -54,10 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$classname = test_input($_POST["classname"]);
 		}
   
-		if (empty($_POST["sect"])) {
+		if (empty($_POST["section"])) {
 			$sectErr = "";
 		} else {
-			$sect = test_input($_POST["sect"]);
+			$section = test_input($_POST["section"]);
 		}
   
   try{
