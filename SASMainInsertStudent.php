@@ -30,26 +30,23 @@
 
 <?php 
 
-$enrollnumErr = $statusErr = $reasonErr = $dateTodayErr = $classname = $section = "";
+$classname = $section = "";
 $enrollnum = $status = $reason = "";
 $dateToday;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enroll. Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
   if (empty($_POST["dateToday"])) {
-    $dateTodayErr = "Date is required";
   } else {
     $dateToday = test_input($_POST["dateToday"]);
   }
   
   if (empty($_POST["status"])) {
-    $statusErr = "Status is required";
   } else {
     $status = test_input($_POST["status"]);
   }
@@ -61,13 +58,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 		
 		if (empty($_POST["classname"])) {
-			$classnameErr = "Class is required";
 		} else {
 			$classname = test_input($_POST["classname"]);
 		}
   
 		if (empty($_POST["sect"])) {
-			$sectErr = "";
 		} else {
 			$sect = test_input($_POST["sect"]);
 		}
@@ -77,6 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db = new Database();
 	$db->connect(); // Escape any input before insert
 	$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollnum,'DateToday'=>$dateToday,'Status'=>$status,'Reason'=>$reason,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Saved"); location.href="SAS.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Saved");
+	}
 	$res = $db->getResult();  
 	//print_r($res);
 	  

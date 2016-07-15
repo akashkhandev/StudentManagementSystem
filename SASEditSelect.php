@@ -2,19 +2,15 @@
 <body>
 <?php
 
-
-$dateErr = $enrollnumErr = $statusErr = $reasonErr = "";
 $enrollnum = $status = $reason = $classname = $section = "";
 $dateToday;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["enrollnum"])) {
-			$enrollnumErr = "Enrollment Number is required";
 		}else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
 		if (empty($_POST["dateToday"])) {
-			$dateTodayErr = "Date is required";
 		}else {
 			$dateToday = test_input($_POST["dateToday"]);
 		}
@@ -24,7 +20,7 @@ $dateToday;
 		$db = new Database();
 		$db->connect();
 		$enString = 'EnrollmentNumber="'.$enrollnum.'" AND DateToday="'.$dateToday.'"';
-		$db->select('studentattendance','DateToday, EnrollmentNumber, Status, Reason,ClassName,Section',NULL, $enString,'Id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+		$db->select('studentattendance','DateToday, EnrollmentNumber, Status, Reason,ClassName,Section',NULL, $enString,'EnrollmentNumber ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 		$res = $db->getResult();
 		//print_r($res);
 		
@@ -44,6 +40,9 @@ $dateToday;
 			
 			$_SESSION['enrollnum'] = $enrollnum;
 			$_SESSION['dateToday'] = $dateToday;
+		}
+		else{
+			die("Data not found");
 		}
 		
 	

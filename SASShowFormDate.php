@@ -30,10 +30,8 @@
 
 <div id="formId">
 <form id="studentform" action="SASShowTableDate.php" method="post">
-  <div id="formname" class = "SFormItem">
   Date:<br>
-  <input type="date" name="dateToday" required>
-  </div><br>
+  <input type="date" name="dateToday" required><br>
   Class:<br>
 	<select name="classname">
       <option value="Kachi">Kachi</option>
@@ -58,9 +56,7 @@
     </select>
   </br>
   
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 

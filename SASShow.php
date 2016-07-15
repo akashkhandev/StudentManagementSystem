@@ -3,24 +3,21 @@
 <body>
 
 <?php
-$enrollnumErr = "";
+
 $enrollnum = $datemonth = $dateyear = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["enrollnum"])) {
-			$enrollnumErr = "Enrollment Number is required";
 		}else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
 		
 		if (empty($_POST["datemonth"])) {
-			$datemonthErr = "Month is required";
 		}else {
 			$datemonth = test_input($_POST["datemonth"]);
 		}
 		
 		if (empty($_POST["dateyear"])) {
-			$dateyearErr = "Year is required";
 		}else {
 			$dateyear = test_input($_POST["dateyear"]);
 		}
@@ -33,7 +30,7 @@ $enrollnum = $datemonth = $dateyear = "";
 	$db->select('studentattendance','EnrollmentNumber, DateToday, Status, Reason',NULL,$enString,'DateToday ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 	$res = $db->getResult();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-	$db->select('studentdata','FirstName, MiddleName, LastName',NULL,$enString,'ClassID ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+	$db->select('studentdata','FirstName, MiddleName, LastName',NULL,$enString,'EnrollmentNumber ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 	$resName = $db->getResult();
 	//print_r($res);
 

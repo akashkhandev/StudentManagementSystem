@@ -235,6 +235,16 @@ class Database{
         return $val;
     }
 
+    //Pass the number of rows effected
+    public function rowsEffected(){
+        if(mysqli_affected_rows($this->myconn)>=1){
+			return true;
+		}
+		else{
+			return false;
+		}
+    }
+
     // Escape your string
     public function escapeString($data){
         return $this->myconn->real_escape_string($data);

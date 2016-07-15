@@ -7,13 +7,9 @@ $enrollnum = $phydis = $anydis = $tre = $tresch = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["enrollnum"])) {
-			$enrollnumErr = "Enrollment Number is required";
 		}else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
-  
-		if(!empty($enrollnum))
-		{
 
 			include('class/mysql_crud.php');
 			$db = new Database();
@@ -22,7 +18,7 @@ $enrollnum = $phydis = $anydis = $tre = $tresch = "";
 			$db->select('healthinformation','EnrollmentNumber,Age,Height,Weight,PhysicalDisablility,AnyDisease,MedicalTreatment,MedicalTreatmentinschool',NULL, $enString,'EnrollmentNumber ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 			$res = $db->getResult();
 			//print_r($res);
-		}
+			
 		if (count($res) > 0) {
 	
 			$enrollnum = $res[0]['EnrollmentNumber'];

@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		array_push($valueArray, $val);
 	}
 	//print_r($valueArray);
-	if(!empty($valueArray)){
+	if(count($valueArray)>0){
 		
 		for($i=0; $i<count($valueArray); $i++){
 			if($i == 0){
@@ -78,6 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			include('class/mysql_crud.php');
 			$db = new Database();
 			$db->connect(); // Escape any input before insert
+			
+				
 			for($j=0; $j<count($enrollArray); $j++){
 				$db->insert('studentattendance',array('EnrollmentNumber'=>$enrollArray[$j],'Status'=>$statusArray[$j],'Reason'=>$reasonArray[$j],'DateToday'=>$dateToday,'ClassName'=>$classname,'Section'=>$section));  // Table name, column names and respective values
 				
@@ -86,6 +88,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				print($statusArray[$j]."\n");
 				print($reasonArray[$j]."\n");*/
 			}
+			
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Saved"); location.href="SAS.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Saved");
+	}
+	
 	}
 	else{
 		 die("Data not found");

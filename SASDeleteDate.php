@@ -29,28 +29,23 @@
 
 <?php
 
-$enrollnumErr = "";
 $enrollnum = "";
-$dateSubErr = "";
 $dateSub;
 $classname = $section = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   if (empty($_POST["dateSub"])) {
-    $dateSubErr = "Date is required";
   } else {
     $dateSub = test_input($_POST["dateSub"]);
   }
 		
 		if (empty($_POST["classname"])) {
-			$classnameErr = "Class is required";
 		} else {
 			$classname = test_input($_POST["classname"]);
 		}
   
 		if (empty($_POST["section"])) {
-			$sectErr = "";
 		} else {
 			$section = test_input($_POST["section"]);
 		}
@@ -61,6 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	$enString = 'DateToday="'.$dateSub.'" AND ClassName="'.$classname.'" AND Section="'.$section.'"';
 	$db->delete('studentattendance',$enString);  // Table name, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Deleted"); location.href="SAS.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Deleted");
+	}
 	$res = $db->getResult();  
 	//print_r($res);
 	  

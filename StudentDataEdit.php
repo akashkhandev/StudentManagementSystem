@@ -30,19 +30,16 @@
 
 <?php
 
-$enrollnumErr = $firstnameErr = $middlenameErr = $lastnameErr = $fathernameErr = $genderErr = $dobErr = $add_preErr = $add_perErr = $religionErr = $sectErr = $hafizErr = $castErr = $subcastErr = "";
 $enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = $classname = $section = "";
 $dob;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enroll. Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
   if (empty($_POST["firstname"])) {
-    $firstnameErr = "First Name is required";
   } else {
     $firstname = test_input($_POST["firstname"]);
   }
@@ -54,43 +51,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   if (empty($_POST["lastname"])) {
-    $lastnameErr = "Last Name is required";
   } else {
     $lastname = test_input($_POST["lastname"]);
   }
 
   if (empty($_POST["fathername"])) {
-	$fathernameErr = "Father's Name is required";
   } else {
     $fathername = test_input($_POST["fathername"]);
   }
 
   if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
   }
 
   if (empty($_POST["dob"])) {
-    $dobErr = "Date of Birth is required";
   } else {
     $dob = test_input($_POST["dob"]);
   }
 
   if (empty($_POST["add_pre"])) {
-    $add_preErr = "Present Address is required";
   } else {
     $add_pre = test_input($_POST["add_pre"]);
   }
 
   if (empty($_POST["add_per"])) {
-    $add_perErr = "Permanent Address is required";
   } else {
     $add_per = test_input($_POST["add_per"]);
   }
 
   if (empty($_POST["religion"])) {
-    $religionErr = "Religion is required";
   } else {
     $religion = test_input($_POST["religion"]);
   }
@@ -102,7 +92,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (empty($_POST["hafiz"])) {
-    $hafiz = "";
   } else {
     $hafiz = test_input($_POST["hafiz"]);
   }
@@ -120,13 +109,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   if (empty($_POST["classname"])) {
-    $classnameErr = "Class is required";
   } else {
     $classname = test_input($_POST["classname"]);
   }
   
   if (empty($_POST["section"])) {
-    
   } else {
     $section = test_input($_POST["section"]);
   }
@@ -136,6 +123,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
 	$db->update('studentdata',array('EnrollmentNumber'=>$enrollnum,'FirstName'=>$firstname,'MiddleName'=>$middlename,'LastName'=>$lastname, 'FatherName'=>$fathername, 'Gender'=>$gender, 'DateOfBirth'=>$dob, 'Address_Present'=>$add_pre, 'Address_Permanant'=>$add_per, 'Religion'=>$religion, 'Sect'=>$sect,'HafizeQuran'=>$hafiz,'Cast'=>$cast,'SubCast'=>$subcast,'ClassName'=>$classname,'Section'=>$section), $enString); // Table name, column names and values, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Updated"); location.href="StudentData.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Updated");
+	}
 	$res = $db->getResult();
 	//print_r($res);
 }

@@ -31,34 +31,50 @@
 <?php include 'menu.php';?>
 
 	<?php
-		include_once('StudentResultShow.php');
-	?> 
+		include_once('StudentDataProfile.php');
+	?>
 	
 	<h5>Enrollment Number: <?php echo $enrollnum; ?></h5><br>
 	<h5>Student Name: <?php echo $sname; ?></h5><br>
 	<h5>Class: <?php echo $classname; ?></h5><br>
-	<h5>Section: <?php echo $sect; ?></h5><br>
-	<h5>Term: <?php echo $term; ?></h5><br><br><br><br>
-
-	<table class='pure-table pure-table-bordered'>
+	<h5>Section: <?php echo $section; ?></h5><br><br><br>
+	<table class='pure-table'>
 	<thead>
-	<tr><th>Examination Year</th>
-	<th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th>
-	<th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th>
-	<th>Total Subject 5</th></tr>
+	<tr><th>Father Name</th><th>Gender</th><th>Date of Birth</th><th>Address Present</th>
+	<th>Address Permanant</th><th>Religion</th><th>Sect</th><th>Hafiz-e-Quran</th><th>Cast</th>
+	<th>SubCast</th></tr>
 	</thead>
-	
-	
+		
 	<tbody>
-	<tr><td><?php echo $examdate; ?></td><td><?php echo $tname; ?></td><td><?php echo $sub1; ?></td>
-	<td><?php echo $tsub1; ?></td><td><?php echo $sub2; ?></td><td><?php echo $tsub2; ?></td>
-	<td><?php echo $sub3; ?></td><td><?php echo $tsub3; ?></td><td><?php echo $sub4; ?></td>
-	<td><?php echo $tsub4; ?></td><td><?php echo $sub5; ?></td><td><?php echo $tsub5; ?></td></tr>
+	<tr><td><?php echo $fathername; ?></td><td><?php echo $gender; ?></td><td><?php echo $dob; ?></td>
+	<td><?php echo $add_pre; ?></td><td><?php echo $add_per; ?></td><td><?php echo $religion; ?></td>
+	<td><?php echo $sect; ?></td><td><?php echo $hafiz; ?></td><td><?php echo $cast; ?></td>
+	<td><?php echo $subcast; ?></td></tr>
 	</tbody>
-	
 	</table>
+	<br><br><br>
 	
+	<h3>Health Information:</h3><br>
+	<table class='pure-table'>
+	<thead>
+	<tr><th>Age</th><th>Height</th><th>Weight</th><th>Physical Disablility</th><th>Any Disease</th>
+	<th>Medical Treatment</th><th>Medical Treatment in school</th></tr>
+	</thead>
+		
+	<tbody>
+	<tr><td><?php echo $age; ?></td><td><?php echo $height; ?></td><td><?php echo $weight; ?></td>
+	<td><?php echo $phydis; ?></td><td><?php echo $anydis; ?></td><td><?php echo $tre; ?></td>
+	<td><?php echo $tresch; ?></td></tr>
+	</tbody>
+	</table>
+
+	<?php
+		include_once('StudentDataProfileResult.php');
+	?>
+
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
+	
+	
 </body>
-</head>
+</html>

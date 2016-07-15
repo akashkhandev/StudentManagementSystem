@@ -27,10 +27,8 @@
 
 <div id="formId">
 <form id="studentform" action="SASDeleteDate.php" method="post">
-  <div id="formname" class = "SFormItem">
   Date:<br>
-  <input type="date" name="dateSub" required>
-  </div><br>
+  <input type="date" name="dateSub" required><br>
   
   Class:<br>
 	<select name="classname">
@@ -56,9 +54,7 @@
     </select>
   </br>
   
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 

@@ -12,13 +12,11 @@ $enrollArray = array();
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 		if (empty($_POST["classname"])) {
-			$classnameErr = "Class is required";
 		} else {
 			$classname = test_input($_POST["classname"]);
 		}
   
 		if (empty($_POST["section"])) {
-			$sectErr = "";
 		} else {
 			$section = test_input($_POST["section"]);
 		}
@@ -33,6 +31,7 @@ $enrollArray = array();
 
 	if(count($res)>0){
 		
+		echo '<form id="att_form" action="SASMainInsert.php" method="post"> Date:<br><input type="date" name="dateToday" required>';
 		echo "<table class='pure-table'><thead><tr><th>S. No.</th><th>Enrollment Number</th><th>Name</th><th>Status</th><th>Reason (if leave)</th></tr></thead>";
 		for($x = 0; $x < count($res); $x++) {
 			echo "<tbody><tr>";
@@ -46,11 +45,16 @@ $enrollArray = array();
 			array_push($enrollArray, $res[$x]["EnrollmentNumber"]);
 		}
 		echo "</table>";
+		echo '<br><input type="submit" value="Submit" ></form>';
+		
 		
 		$_SESSION['classname'] = $classname;
 		$_SESSION['section'] = $section;
 		$_SESSION['enrollArray'] = $enrollArray;
  
+	}
+	else{
+		die("Data not found");
 	}
 	
 	}

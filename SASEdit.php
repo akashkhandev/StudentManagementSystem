@@ -27,7 +27,6 @@
 
 <?php
 
-$dateTodayErr = $enrollnumErr = $statusErr = $reasonErr = "";
 $enrollnum = $status = $reason = $classname = $section = "";
 $dateToday;
 
@@ -36,26 +35,22 @@ $dateToday = $_SESSION['dateToday'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["status"])) {
-    $statusErr = "Status is required";
   } else {
     $status = test_input($_POST["status"]);
   }
   
   if (empty($_POST["reason"])) {
-    $reasonErr = "";
+    $reason = "";
   } else {
     $reason = test_input($_POST["reason"]);
   }
-  
-  
+		
 		if (empty($_POST["classname"])) {
-			$classnameErr = "Class is required";
 		} else {
 			$classname = test_input($_POST["classname"]);
 		}
   
 		if (empty($_POST["section"])) {
-			$sectErr = "";
 		} else {
 			$section = test_input($_POST["section"]);
 		}
@@ -66,6 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND DateToday="'.$dateToday.'"';
 	$db->update('studentattendance',array('Status'=>$status,'Reason'=>$reason,'ClassName'=>$classname,'Section'=>$section), $enString); // Table name, column names and values, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Updated"); location.href="SAS.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Updated");
+	}
 	$res = $db->getResult();
 	//print_r($res);
 	  

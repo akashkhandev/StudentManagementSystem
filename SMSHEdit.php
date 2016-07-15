@@ -36,25 +36,21 @@ $enrollnum = $phydis = $anydis = $tre = $tresch = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enroll. Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
   if (empty($_POST["age"])) {
-    $ageErr = "age is required";
   } else {
     $age = test_input($_POST["age"]);
   }
   
   if (empty($_POST["height"])) {
-    $height = "height is required";
   } else {
     $height = test_input($_POST["height"]);
   }
   
   if (empty($_POST["weight"])) {
-    $weightErr = "weight is required";
   } else {
     $weight = test_input($_POST["weight"]);
   }
@@ -89,6 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
 	$db->update('healthinformation',array('EnrollmentNumber'=>$enrollnum,'Age'=>$age,'Height'=>$height,'Weight'=>$weight, 'PhysicalDisablility'=>$phydis, 'AnyDisease'=>$anydis, 'MedicalTreatment'=>$tre, 'MedicalTreatmentinschool'=>$tresch), $enString); // Table name, column names and values, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Updated"); location.href="SMSH.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Updated");
+	}
 	$res = $db->getResult();
 	//print_r($res);
 }

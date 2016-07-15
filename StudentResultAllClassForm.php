@@ -30,7 +30,6 @@
 
 <div id="formId">
 <form id="studentform" action="StudentResultAllClassTable.php" method="post">
-  <div id="formname" class = "SFormItem">
   Class:<br>
 	<select name="classname">
       <option value="Kachi">Kachi</option>
@@ -63,10 +62,7 @@
   Examination Year:<br>
   <input type="number" name="examdate" min="1980" max="2099" required>
   </br>
-  </div>
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 

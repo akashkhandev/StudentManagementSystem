@@ -30,30 +30,25 @@
 
 <?php
 
-$enrollnumErr = "";
 $enrollnum = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enrollment Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
   if (empty($_POST["classname"])) {
-    $classnameErr = "Class is required";
   } else {
     $classname = test_input($_POST["classname"]);
   }
   
   if (empty($_POST["sect"])) {
-    $sectErr = "";
   } else {
     $sect = test_input($_POST["sect"]);
   }
   
   if (empty($_POST["term"])) {
-    $termErr = "";
   } else {
     $term = test_input($_POST["term"]);
   }
@@ -64,7 +59,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	
 	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND Class="'.$classname.'" AND Section="'.$sect.'" AND Term="'.$term.'"';
-	$db->delete('studentresult',$enString);  // Table name, WHERE conditions
+	$db->delete('studentresult',$enString);	// Table name, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Deleted"); location.href="StudentResult.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Deleted");
+	}
 	$res = $db->getResult();  
 	//print_r($res);
   }

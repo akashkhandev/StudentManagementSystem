@@ -27,18 +27,12 @@
 
 <div id="formId">
 <form id="studentform" action="SASDeleteEN.php" method="post">
-  <div id="formname" class = "SFormItem">
   Enrollment Number:<br>
-  <input type="text" name="enrollnum" required>
-  </div><br>
-  <div id="formname" class = "SFormItem">
+  <input type="text" name="enrollnum" required><br>
   Date:<br>
-  <input type="date" name="dateSub" required>
-  </div><br>
+  <input type="date" name="dateSub" required><br>
   
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 

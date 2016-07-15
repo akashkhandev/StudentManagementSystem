@@ -2,32 +2,27 @@
 <body>
 <?php
 
-$enrollnumErr = "";
 $enrollnum = $sect = $classname = $tname = "";
 $sub1; $tsub1; $sub2; $tsub2; $sub3; $tsub3; $sub4; $tsub4; $sub5; $tsub5;
 $examdate;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["enrollnum"])) {
-			$enrollnumErr = "Enrollment Number is required";
 		}else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
   
   if (empty($_POST["classname"])) {
-    $classnameErr = "Class is required";
   } else {
     $classname = test_input($_POST["classname"]);
   }
   
   if (empty($_POST["sect"])) {
-    $sectErr = "";
   } else {
     $sect = test_input($_POST["sect"]);
   }
   
   if (empty($_POST["term"])) {
-    $termErr = "";
   } else {
     $term = test_input($_POST["term"]);
   }

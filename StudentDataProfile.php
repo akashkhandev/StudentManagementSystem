@@ -4,6 +4,8 @@
 
 	$enrollnum = $firstname = $middlename = $lastname = $fathername = $gender = $add_pre = $add_per = $religion = $sect = $hafiz = $cast = $subcast = $classname = $section = "";
 	$dob;
+	$phydis = $anydis = $tre = $tresch = $sname = "";
+	$age = $height = $weight = 0;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["enrollnum"])) {
@@ -20,14 +22,19 @@
 			$enString = 'EnrollmentNumber="'.$enrollnum.'"';
 			$db->select('studentdata','EnrollmentNumber,FirstName,MiddleName,LastName,FatherName,Gender,DateOfBirth,Address_Present,Address_Permanant,Religion,Sect,HafizeQuran,Cast,SubCast,ClassName,Section',NULL, $enString,'EnrollmentNumber ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
 			$res = $db->getResult();
+			$db->select('healthinformation','EnrollmentNumber,Age,Height,Weight,PhysicalDisablility,AnyDisease,MedicalTreatment,MedicalTreatmentinschool',NULL,$enString,'EnrollmentNumber ASC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+			$res2 = $db->getResult();
 			//print_r($res);
 		}
 		if (count($res) > 0) {
 	
 			$enrollnum = $res[0]['EnrollmentNumber'];
-			$firstname = $res[0]['FirstName'];
-			$middlename = $res[0]['MiddleName'];
-			$lastname = $res[0]['LastName'];
+			if(empty($res[0]['MiddleName'])){
+				$sname = $res[0]['FirstName']." ".$res[0]['LastName'];;
+			}
+			else{
+				$sname = $res[0]['FirstName']." ".$res[0]['MiddleName']." ".$res[0]['LastName'];;
+			}
 			$fathername = $res[0]['FatherName'];
 			$gender = $res[0]['Gender'];
 			$dob = $res[0]['DateOfBirth'];
@@ -40,6 +47,26 @@
 			$subcast = $res[0]['SubCast'];
 			$classname = $res[0]['ClassName'];
 			$section = $res[0]['Section'];
+			
+			if (count($res2) > 0) {
+				$age = $res2[0]['Age'];
+				$height = $res2[0]['Height'];
+				$weight = $res2[0]['Weight'];
+				$phydis = $res2[0]['PhysicalDisablility'];
+				$anydis = $res2[0]['AnyDisease'];
+				$tre = $res2[0]['MedicalTreatment'];
+				$tresch = $res2[0]['MedicalTreatmentinschool'];
+			}
+			else{
+				$age = NULL;
+				$height = NULL;
+				$weight = NULL;
+				$phydis = NULL;
+				$anydis = NULL;
+				$tre = NULL;
+				$tresch = NULL;
+			}
+			
 		}
 		else{
 			 die("Data not found");

@@ -3,20 +3,17 @@
 <body>
 <?php
 
-$enrollnumErr = "";
-$enrollnum = $sect = $classname = $tname = "";
+$enrollnum = $section = $classname = $tname = "";
 $sub1 = $tsub1 = $sub2 = $tsub2 = $sub3 = $tsub3 = $sub4 = $tsub4 = $sub5 = $tsub5 = 0;
 $examdate;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 		if (empty($_POST["enrollnum"])) {
-			$enrollnumErr = "Enroll num. is required";
 		} else {
 			$enrollnum = test_input($_POST["enrollnum"]);
 		}
 
-		include('class/mysql_crud.php');
 		$db = new Database();
 		$db->connect();
 		$enString = 'EnrollmentNumber="'.$enrollnum.'"';
@@ -24,10 +21,9 @@ $examdate;
 		$res = $db->getResult();
 		//print_r($res2);
 		
-		
 		if (count($res) > 0) {
-			echo "<h4>Enrollment Number: ".$res[0]["EnrollmentNumber"]."</h4><br><br><br>";
-			echo "<table class='pure-table pure-table-bordered'><thead><tr><th>S. No.</th><th>Class</th><th>Section</th><th>Term</th><th>Examination Year</th><th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th><th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th><th>Total Subject 5</th></tr>";
+			echo "<br><br><br><h4>All Results: </h4><br>";
+			echo "<table class='pure-table'><thead><tr><th>S. No.</th><th>Class</th><th>Section</th><th>Term</th><th>Examination Year</th><th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th><th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th><th>Total Subject 5</th></tr>";
 		
 			for($x = 0; $x < count($res); $x++) {
 				echo "</thead><tr><tbody>";
@@ -39,18 +35,9 @@ $examdate;
 			echo "</table>";
 		}
 		else{
-			die("Data not found");
+				
 		}
 	}
-	
-	
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-} 
 ?>
 
 </html>

@@ -30,7 +30,6 @@
 
 <div id="formId">
 <form id="studentform" action="StudentDataSelectTable.php" method="post">
-  <div id="formname" class = "SFormItem">
   Class:<br>
 	<select name="classname">
       <option value="Kachi">Kachi</option>
@@ -54,10 +53,7 @@
       <option value="D">D</option>
     </select>
   </br>
-  </div>
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 

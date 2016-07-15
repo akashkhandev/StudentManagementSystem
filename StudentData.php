@@ -24,8 +24,6 @@
 <link rel="stylesheet" href="pure-release-0.6.0/pure-min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">	
 
-
-	
 </head>
 <body>
 
@@ -33,9 +31,10 @@
 
 <div class="pure-menu pure-menu-horizontal">
     <a href="StudentDataSelectForm.php" class="pure-menu-heading pure-menu-link">Show Data</a><br>
-    <a href="StudentDataInsertForm.php" class="pure-menu-heading pure-menu-link">Insert</a><br>
-    <a href="StudentDataGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a><br>
-    <a href="StudentDataDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete</a>
+    <a href="StudentDataProfileForm.php" class="pure-menu-heading pure-menu-link">Show Profile</a><br>
+    <a href="StudentDataInsertForm.php" class="pure-menu-heading pure-menu-link">Insert Data</a><br>
+    <a href="StudentDataGetENForm.php" class="pure-menu-heading pure-menu-link">Update Data</a><br>
+    <a href="StudentDataDeleteForm.php" class="pure-menu-heading pure-menu-link">Delete Data</a>
 </div>
 
 <!-- Footer Section -->

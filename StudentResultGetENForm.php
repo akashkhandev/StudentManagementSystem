@@ -30,10 +30,8 @@
 
 <div id="formId">
 <form id="studentform" action="StudentResultEditForm.php" method="post">
-  <div id="formname" class = "SFormItem">
   Enrollment Number:<br>
-  <input type="text" name="enrollnum" required>
-  </div><br>
+  <input type="text" name="enrollnum" required><br>
   Class:<br>
 	<select name="classname">
       <option value="Kachi">Kachi</option>
@@ -64,9 +62,7 @@
     </select>
   </br>
   
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 

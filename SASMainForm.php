@@ -30,19 +30,11 @@
 
 <?php include 'menu.php';?>
 
-	
-<form id="att_form" action="SASMainInsert.php" method="post">
-	
-	
-  Date:<br>
-  <input type="date" name="dateToday" required>
+
 	
 	<?php
 		include_once('SASMain.php');
 	?>
-  <br>
-  <input type="submit" value="Submit" >
-</form>
 	
 <!-- Footer Section -->
 <?php include 'footer.php' ?>

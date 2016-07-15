@@ -28,20 +28,16 @@
 
 <?php
 
-$enrollnumErr = "";
 $enrollnum = "";
-$dateSubErr = "";
 $dateSub;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enrollment Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
   
   if (empty($_POST["dateSub"])) {
-    $dateSubErr = "Date is required";
   } else {
     $dateSub = test_input($_POST["dateSub"]);
   }
@@ -52,6 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'" AND DateToday="'.$dateSub.'"';
 	$db->delete('studentattendance',$enString);  // Table name, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Deleted"); location.href="SAS.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Deleted");
+	}
 	$res = $db->getResult();  
 	//print_r($res);
 	  

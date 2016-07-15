@@ -20,8 +20,6 @@
 <script type="text/javascript" src="js/tabs.js"></script>
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
-
-
 	
 </head>
 <body>
@@ -30,12 +28,10 @@
 
 <?php
 
-$enrollnumErr = "";
 $enrollnum = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enrollment Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
@@ -45,7 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db = new Database();
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
-	$db->delete('studentdata',$enString);  // Table name, WHERE conditions
+	$db->delete('studentdata',$enString); // Table name, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Deleted"); location.href="StudentData.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Deleted");
+	}
 	$res = $db->getResult();  
 	//print_r($res);
 	  

@@ -30,12 +30,10 @@
 
 <?php
 
-$enrollnumErr = "";
 $enrollnum = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["enrollnum"])) {
-    $enrollnumErr = "Enrollment Number is required";
   } else {
     $enrollnum = test_input($_POST["enrollnum"]);
   }
@@ -46,6 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db->connect();
 	$enString = 'EnrollmentNumber="'.$enrollnum.'"';
 	$db->delete('healthinformation',$enString);  // Table name, WHERE conditions
+	if ($db->rowsEffected()){
+		echo '<script language="javascript">';
+		echo 'alert("Successfully Deleted"); location.href="SMSH.php"';
+        echo '</script>';
+	}
+	else{
+		die("Data not Deleted");
+	}
 	$res = $db->getResult();  
 	//print_r($res);
 	  

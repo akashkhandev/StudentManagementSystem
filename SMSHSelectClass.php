@@ -10,13 +10,11 @@ $enrollnum = $phydis = $anydis = $tre = $tresch = $classname = $section = "";
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 		if (empty($_POST["classname"])) {
-			$classnameErr = "Class is required";
 		} else {
 			$classname = test_input($_POST["classname"]);
 		}
   
 		if (empty($_POST["section"])) {
-			$sectErr = "";
 		} else {
 			$section = test_input($_POST["section"]);
 		}

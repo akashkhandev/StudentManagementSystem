@@ -27,19 +27,12 @@
 
 <div id="formId">
 <form id="studentform" action="SASEditForm.php" method="post">
-  <div id="formname" class = "SFormItem">
   Enrollment Number:<br>
-  <input type="text" name="enrollnum" required>
-  </div><br>
-  <div>
+  <input type="text" name="enrollnum" required><br>
   Date:<br>
-  <input type="date" name="dateToday" required>
-  </div><br>
+  <input type="date" name="dateToday" required><br>
   
-  
-  <div id="formsubmit" class = "SFormItem">
   <input type="submit" value="Submit">
-  </div>
 </form>
 </div>
 
