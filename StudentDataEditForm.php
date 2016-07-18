@@ -32,8 +32,8 @@
 	
 <div id="formId">
 <form id="studentform" action="StudentDataEdit.php" method="post">
-  Enrollment Number:<br>
-  <input type="text" name="enrollnum" value="<?php echo $enrollnum; ?>" required>
+	<h5>Enrollment Number: <?php echo $enrollnum; ?></h5><br>
+  <input type="hidden" name="enrollnum" value="<?php echo $enrollnum; ?>" required>
   <br>
   First Name:<br>
   <input type="text" name="firstname" value="<?php echo $firstname; ?>" required>

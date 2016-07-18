@@ -34,8 +34,8 @@
 	
 <div id="formId">
 <form id="studentform" action="StudentResultEdit.php" method="post">
-  Student Enrollment Number:<br>
-  <input type="text" name="enrollnum" value="<?php echo $enrollnum; ?>" required>
+	<h5>Enrollment Number: <?php echo $enrollnum; ?></h5><br>
+  <input type="hidden" name="enrollnum" value="<?php echo $enrollnum; ?>" required>
   <br>
   Class:<br>
 	<select name="classname">

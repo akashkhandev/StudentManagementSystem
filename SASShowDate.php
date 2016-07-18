@@ -33,7 +33,7 @@ $dateToday = $classname = $section = "";
 
 	if(count($res)>0){
 		echo "<h3>Date: ".$dateToday."</h3>"."<h3>Class: ".$classname."</h3>"."<h3>Section: ".$section."</h3>";
-		}
+		
 		echo "<br><br><br><table class='pure-table'><thead><tr><th>Enrollment Number</th><th>Status</th><th>Reason</th></tr></thead>";
 		for($x = 0; $x < count($res); $x++) {
 			echo "<tbody><tr>";
@@ -43,8 +43,9 @@ $dateToday = $classname = $section = "";
 		}
 		echo "</table>";
  
-	}else {
-		 die("Data not found");
+		}else {
+			die("Data not found");
+		}
 	}
 
 function test_input($data) {

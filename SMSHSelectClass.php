@@ -28,7 +28,7 @@ $enrollnum = $phydis = $anydis = $tre = $tresch = $classname = $section = "";
 	//print_r($res);
 
 	if(count($res)>0){
-		
+		$num = 0;
 		echo "<table class='pure-table'><thead><tr><th>S. No.</th><th>Enrollment Number</th><th>Age</th><th>Height</th><th>Weight</th><th>Physical Disablility</th><th>Any Disease</th><th>Medical Treatment</th><th>Medical Treatment in School</th></tr>";
 		for($x = 0; $x < count($res); $x++) {
 			
@@ -38,7 +38,7 @@ $enrollnum = $phydis = $anydis = $tre = $tresch = $classname = $section = "";
 			//print_r($res2);
 			if(count($res2)>0){
 				echo "</thead><tr><tbody>";
-				$num = $x + 1;
+				$num = $num + 1;
 				echo "<td>".$num."</td><td>".$res2[0]["EnrollmentNumber"]."</td><td>".$res2[0]["Age"]."</td><td>".$res2[0]["Height"]."</td><td>".$res2[0]["Weight"]."</td><td>".$res2[0]["PhysicalDisablility"]."</td><td>".$res2[0]["AnyDisease"]."</td><td>".$res2[0]["MedicalTreatment"]."</td><td>".$res2[0]["MedicalTreatmentinschool"]."</td>";
 				echo "</tr></tbody>";
 			}
