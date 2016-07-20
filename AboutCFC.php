@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Charter for compassion | EMIS</title>
+<title>About CFC</title>
 <!-- Stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
@@ -28,16 +28,16 @@
 <body>
 
 <?php include 'menu.php';?>
+	
+	<br><h3>Charter For Compassion</h3><br>
+	<div id="">
+        		<p>&nbsp;&nbsp;&nbsp; Charter for Compassion Pakistan is a cooperative effort to restore not only compassionate thinking but, more importantly, compassionate action to the center of our lives, it is a document that was drafted by a multi-faith, multi-national council of thinkers and leaders. The Charter for Compassion initiative is the result of Karen Armstrong's win of the 2008 TED Prize.</p><br>
 
-<div class="pure-menu pure-menu-horizontal">
-    <a href="SASShowForm.php" class="pure-menu-heading pure-menu-link">Show Data</a><br>
-    <a href="SASShowFormDate.php" class="pure-menu-heading pure-menu-link">Show Data By Date</a><br>
-    <a href="SASMainFormClass.php" class="pure-menu-heading pure-menu-link">Insert</a><br>
-    <a href="SASMainFormStudent.php" class="pure-menu-heading pure-menu-link">Insert (Only One)</a><br>
-    <a href="SASGetENForm.php" class="pure-menu-heading pure-menu-link">Update</a><br>
-    <a href="SASDeleteFormEN.php" class="pure-menu-heading pure-menu-link">Delete EN</a><br>
-    <a href="SASDeleteFormDate.php" class="pure-menu-heading pure-menu-link">Delete Date</a>
-</div>
+				<p>&nbsp;&nbsp;&nbsp; We work in diverse ways through various sectors of society--businesses, with cities and communities across the globe, within educational institutions and organizations and with religious congregations and associations--to create and establish cultures of compassion locally and globally.</p><br>
+
+				<p>&nbsp;&nbsp;&nbsp; In a world that is deeply troubled and polarized we are committed to making a change. Through forming partnerships and by collaborating with similarly minded organizations we are endeavoring to acknowledge that by thinking and acting compassionately we can create a just world.</p><br>
+				
+			</div> 
 
 
 <!-- Footer Section -->

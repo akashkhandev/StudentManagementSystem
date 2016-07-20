@@ -38,11 +38,11 @@
                                   <div id="smoothmenu1" class="ddsmoothmenu">
                                   	  <ul>
                                   	      <li class="first"><a  href="index.php">Home</a></li>
-                                          <li><a  href="StudentData.php" >Student Information</a>
+                                          <li><a  href="#" >Student Information</a>
 										 
                                               
                                                   <ul>
-                                                     <li><a href="StudentDataSelectForm.php" class="dropdown">Class Data Show</a>
+                                                     <li><a href="StudentDataSelectForm.php" class="dropdown">Show Class Data</a>
 													
 															</li>
                                                      <li><a href="StudentDataInsertForm.php" class="dropdown">Add Student Data</a>
@@ -57,33 +57,33 @@
                                                
                                               </ul>			
                                           </li>
-										  <li><a  href="SAS.php" >Student Attandnace</a>
+										  <li><a  href="#" >Student Attendance</a>
 										 
                                               
                                                   <ul>
-                                                     <li><a href="SASMainFormClass.php" class="dropdown">Add Attandnace </a>
+													   <li><a href="SASShowForm.php" class="dropdown">Student Month Attendance</a>
+                                                         	
+                                                  	  </li>
+                                                     <li><a href="SASMainFormClass.php" class="dropdown">Add Attendance of Class</a>
 													
 															</li>
-                                                     <li><a href="SASMainFormStudent.php" class="dropdown">Add Attandnace of One Student</a>
+                                                     <li><a href="SASMainFormStudent.php" class="dropdown">Add Attendance of Student</a>
                                                          	
                                                   	  </li>
-													  <li><a href="StudentDataGetENForm.php" class="dropdown">Update Student Data</a>
+													  <li><a href="StudentDataGetENForm.php" class="dropdown">Update Student Attendance</a>
                                                          	
                                                   	  </li>
-													  <li><a href="SASDeleteFormEN.php" class="dropdown">Delete Student Data</a>
+													  <li><a href="SASDeleteFormEN.php" class="dropdown">Delete Student Attendance</a>
                                                          	
                                                   	  </li>
-													  <li><a href="SASDeleteFormDate.php" class="dropdown">Delete Date Data</a>
-                                                         	
-                                                  	  </li>
-													   <li><a href="SASShowForm.php" class="dropdown">Student Month Data show</a>
+													  <li><a href="SASDeleteFormDate.php" class="dropdown">Delete Date Attendance</a>
                                                          	
                                                   	  </li>
                                                
                                               </ul>			
                                           </li>
                                          
-                                          <li><a   href="StudentResult.php">Student Result</a> 
+                                          <li><a   href="#">Student Result</a> 
 										  
                                                   <ul>
                                                      <li><a href="StudentResultAllClassForm.php" class="dropdown">Show Class Result</a>
@@ -106,12 +106,12 @@
                                                   	  </li>
                                                
                                               </ul>		</li>
-                                          <li><a    href="SMSH.php">Student Health</a>
+                                          <li><a    href="#">Student Health</a>
 										  <ul>
                                                      <li><a href="SMSHSelectFormClass.php" class="dropdown">Show Class Health Information</a>
 													
 															</li>
-                                                     <li><a href="SMSHSelectTable.php" class="dropdown">Health information of One student</a>
+                                                     <li><a href="SMSHSelectTable.php" class="dropdown">Health information of student</a>
                                                          	
                                                   	  </li>
 													  <li><a href="SMSHInsertForm.php" class="dropdown">Add Health Information</a>
@@ -126,7 +126,9 @@
 													   
                                               </ul>	</li>
                                           <li><a  href="StudentDataProfileForm.php">Student Profile</a> </li>
-										  <li><a   href="StudentResultAllStudentForm.php">Result Of one Student</a></li>
+                                          <li><a  href="AboutCFC.php">About CFC</a> </li>
+										  
+										  <!-- <li><a   href="StudentResultAllStudentForm.php">Result Of one Student</a></li> -->
                                           
 
                                       </ul>				
