@@ -7,7 +7,7 @@
 		 <!-- masterhead -->
 			<div id="masterhead">
 				<!-- Logo -->
-                	<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+                	<div class="logo"><a href="index.html"><img src="logo.png" alt="" /></a></div>
                 	<!-- masterhead Right Section -->
 						<div class="topright_sec">
                     		<!-- top navigation -->
@@ -27,10 +27,7 @@
                                 	<div class="top_search">
                                     	 <!-- <div class="advance_search"><a href="#">Advance Option</a></div> -->
                                         <ul>
-                                        	<li><input name="txt" value="Search you any keyword"
-                                            	onfocus="if(this.value=='Search you any keyword') {this.value='';}"
-                        						onblur="if(this.value=='') {this.value='Search you any keyword';}"   type="text" /></li>
-                                            <li><a class="search" href="#">Search</a></li>
+                                        	
                                          </ul>
                                     </div>
                          	<div class="clear"> </div>       	
@@ -40,59 +37,97 @@
                               <div class="navigation">
                                   <div id="smoothmenu1" class="ddsmoothmenu">
                                   	  <ul>
-                                  	      <li class="first"><a class="selected"  href="index.html">Home</a></li>
-                                          <li><a class="selected"  href="Aboutus.php">About Us</a></li>
-                                          <li><a class="selected"  href="Events.php">News and Events</a></li>
-                                          <li><a class="selected"  >Course Outline</a>
-                                              <!-- Sub Menu level 1 -->    
+                                  	      <li class="first"><a  href="index.php">Home</a></li>
+                                          <li><a  href="StudentData.php" >Student Information</a>
+										 
+                                              
                                                   <ul>
-                                                     <li><a href="Outlinesukkur.php" class="dropdown">Course outline of Sukkur</a>
-													 <ul>
-                                                                  <li><a href="courseclass1.php">Class 1</a></li>   		
-                                                                  <li><a href="courseclass2.php">Class 2</a></li>  
-                                                                  <li><a href="courseclass3.php">Class 3</a></li>  
-                                                                  <li><a href="courseclass4.php">Class 4</a></li>  
-                                                                  <li><a href="courseclass5.php">Class 5</a></li>  	
-																  <li><a href="courseclass6.php">Class 6</a></li>   		
-                                                                  <li><a href="courseclass7.php">Class 7</a></li>  
-                                                                  <li><a href="courseclass8.php">Class 8</a></li>  
-                                                                  <li><a href="courseclass9.php">Class 9</a></li>  
-                                                                  <li><a href="courseclass10.php">Class 10</a></li>  
-                                                            </ul>	
+                                                     <li><a href="StudentDataSelectForm.php" class="dropdown">Class Data Show</a>
+													
 															</li>
-                                                     <li><a href="Outlinekherpur.php" class="dropdown">Course outline of Kherpur</a>
-                                                          <!-- Sub Menu Level 2 -->
-                                                               <ul>
-                                                                  <li><a href="courseclass1.php">Class 1</a></li>   		
-                                                                  <li><a href="courseclass2.php">Class 2</a></li>  
-                                                                  <li><a href="courseclass3.php">Class 3</a></li>  
-                                                                  <li><a href="courseclass4.php">Class 4</a></li>  
-                                                                  <li><a href="courseclass5.php">Class 5</a></li>  	
-																  <li><a href="courseclass6.php">Class 6</a></li>   		
-                                                                  <li><a href="courseclass7.php">Class 7</a></li>  
-                                                                  <li><a href="courseclass8.php">Class 8</a></li>  
-                                                                  <li><a href="courseclass9.php">Class 9</a></li>  
-                                                                  <li><a href="courseclass10.php">Class 10</a></li>  
-                                                            </ul>		
+                                                     <li><a href="StudentDataInsertForm.php" class="dropdown">Add Student Data</a>
+                                                         	
                                                   	  </li>
-                                                 <!-- <li><a href="course.html">Donec varius arcu eu quam</a></li>
-                                                  <li><a href="course.html">Rutrum rhoncus.</a></li>
-                                                  <li><a href="course.html">Donec suscipit enim et </a></li>
-                                                  <li><a href="course.html">Ipsum eleifend quis luctus</a></li>
-                                                  <li><a href="course.html">Arcu scelerisque.</a></li>   		
-                                              	  <li><a href="course.html">Duis a tortor tellusvel egestas</a></li> -->
+													  <li><a href="StudentDataGetENForm.php" class="dropdown">Update Student Data</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="StudentDataDeleteForm.php" class="dropdown">Delete Student Data</a>
+                                                         	
+                                                  	  </li>
+                                               
                                               </ul>			
                                           </li>
-                                          <li><a class="selected"  href="Gallery.php">Gallery</a> </li>
-                                          <li><a  class="selected"  href="#">Our Schools</a></li>
-                                          <li><a class="selected" href="Partners.php">Our Partners</a> </li>
-                                          <li><a class="selected" href="">School login</a>
-                                               <ul>
-                                                   <li><a href="Kherpur.php">Kherpur Login</a></li>
-                                               		<li><a href="Sukkur.php">Sukkur Login</a></li>
-
-                                               </ul>		
+										  <li><a  href="SAS.php" >Student Attandnace</a>
+										 
+                                              
+                                                  <ul>
+                                                     <li><a href="SASMainFormClass.php" class="dropdown">Add Attandnace </a>
+													
+															</li>
+                                                     <li><a href="SASMainFormStudent.php" class="dropdown">Add Attandnace of One Student</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="StudentDataGetENForm.php" class="dropdown">Update Student Data</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SASDeleteFormEN.php" class="dropdown">Delete Student Data</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SASDeleteFormDate.php" class="dropdown">Delete Date Data</a>
+                                                         	
+                                                  	  </li>
+													   <li><a href="SASShowForm.php" class="dropdown">Student Month Data show</a>
+                                                         	
+                                                  	  </li>
+                                               
+                                              </ul>			
                                           </li>
+                                         
+                                          <li><a   href="StudentResult.php">Student Result</a> 
+										  
+                                                  <ul>
+                                                     <li><a href="StudentResultAllClassForm.php" class="dropdown">Show Class Result</a>
+													
+															</li>
+                                                     <li><a href="StudentResultShowForm.php" class="dropdown">Show Student Result</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="StudentResultAllStudentForm.php" class="dropdown">Show Student All Result</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="StudentResultInsertForm.php" class="dropdown">Add Student Result</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="StudentResultGetENForm.php" class="dropdown">Update Student Result</a>
+                                                         	
+                                                  	  </li>
+													   <li><a href="StudentResultDeleteForm.php" class="dropdown">Delete Student Result</a>
+                                                         	
+                                                  	  </li>
+                                               
+                                              </ul>		</li>
+                                          <li><a    href="SMSH.php">Student Health</a>
+										  <ul>
+                                                     <li><a href="SMSHSelectFormClass.php" class="dropdown">Show Class Health Information</a>
+													
+															</li>
+                                                     <li><a href="SMSHSelectTable.php" class="dropdown">Health information of One student</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SMSHInsertForm.php" class="dropdown">Add Health Information</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SMSHGetENForm.php" class="dropdown">Update Health Information</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SMSHDeleteForm.php" class="dropdown">Delete Student Information</a>
+                                                         	
+                                                  	  </li>
+													   
+                                              </ul>	</li>
+                                          <li><a  href="StudentDataProfileForm.php">Student Profile</a> </li>
+										  <li><a   href="StudentResultAllStudentForm.php">Result Of one Student</a></li>
+                                          
 
                                       </ul>				
                                   </div>

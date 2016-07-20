@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Charter for compassion | EMIS</title>
+<title>Education Managment organization| CFC </title>
 <!-- Stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
@@ -29,13 +29,17 @@
 <body>
 
 <?php include 'menu.php';?>
-
-<div class="pure-menu pure-menu-horizontal">
-    <a href="StudentData.php" class="pure-menu-heading pure-menu-link">Student Data</a><br>
-    <a href="SAS.php" class="pure-menu-heading pure-menu-link">Student Attendance</a><br>
-    <a href="StudentResult.php" class="pure-menu-heading pure-menu-link">Student Result</a><br>
-    <a href="SMSH.php" class="pure-menu-heading pure-menu-link">Student Health</a>
-</div>
+<div id="content_section">
+        		<div class="static_content">
+              		<h2 class="hpad">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Proin dapibus dignissim fermentum.
+					</h2>  
+                	<h5 class="blue"><strong>Proin dapibus dignissim fermentum. Pellentesque pharetra gravida ante in congue. </strong></h5>
+                    <p class="stext">
+                    	Proin dapibus dignissim fermentum. Pellentesque pharetra gravida ante in congue. Duis ipsum enim, faucibus luctus malesuada porta, lobortis nec urna. Nulla fringilla lacus nec nisi interdum vestibulum. Donec id velit purus, nec dapibus metus. Etiam quis enim ipsum. Etiam tellus orci, vehicula suscipit molestie et, elementum ut nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                <p class="pad1">Proin dapibus dignissim fermentum. Pellentesque pharetra gravida ante in congue. Duis ipsum enim, faucibus luctus malesuada porta, lobortis nec urna. Nulla fringilla lacus nec nisi interdum vestibulum. Donec id velit purus, nec dapibus metus. Etiam quis enim ipsum. Etiam tellus orci, vehicula suscipit molestie et, elementum ut nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed purus augue, ut rhoncus leo. Nulla blandit nulla non justo condimentum sagittis.</p>
+                </div>	
+				</div>
 
 <!-- Footer Section -->
 <?php include 'footer.php' ?>
