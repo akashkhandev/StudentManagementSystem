@@ -39,7 +39,7 @@ $examdate;
 		
 		
 		if (count($res) > 0) {
-			echo "<h4>Class: ".$res[0]["Class"]."</h4><br><h4>Section: ".$res[0]["Section"]."</h4><br><h4>Term: ".$res[0]["Term"]."</h4><br><h4>Examination Year: ".$res[0]["ExamDate"]."</h4><br><br><br><br>";
+			echo "<h5>Class: ".$res[0]["Class"]."</h5><h5>Section: ".$res[0]["Section"]."</h5><h5>Term: ".$res[0]["Term"]."</h5><h5>Examination Year: ".$res[0]["ExamDate"]."</h5><br><br>";
 			echo "<table class='pure-table pure-table-bordered'><thead><tr><th>S. No.</th><th>Enrollment Number</th><th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th><th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th><th>Total Subject 5</th></tr>";
 			
 			for($x = 0; $x < count($res); $x++) {

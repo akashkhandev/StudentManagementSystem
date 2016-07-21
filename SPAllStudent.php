@@ -28,8 +28,8 @@ $enrollnum = $datemonth = $dateyear = $classname = $section = $att_per = $ca_per
 			if($datemonth<10){
 				$datemonth = "0".$datemonth;
 			}
-			echo "<h5>Enrollment Number".$res[0]["EnrollmentNumber"]."</h5><br><br>";
-			echo "<table class='pure-table pure-table-bordered'><thead><tr><th>S. No.</th><th>Class</th><th>Section</th><th>Month</th><th>S. No.</th><th>Attendance Performance</th><th>Class Activity Performance</th><th>Behaviour</th><th>Quiz/Monthly Result Performance</th><th>Co-Curricular Activities Performance</th><th>Remarks</th></tr>";
+			echo "<h5>Enrollment Number: ".$res[0]["EnrollmentNumber"]."</h5><br><br>";
+			echo "<table class='pure-table'><thead><tr><th>S. No.</th><th>Class</th><th>Section</th><th>Month</th><th>S. No.</th><th>Attendance Performance</th><th>Class Activity Performance</th><th>Behaviour</th><th>Quiz/Monthly Result Performance</th><th>Co-Curricular Activities Performance</th><th>Remarks</th></tr>";
 			
 			for($x = 0; $x < count($res); $x++) {
 				echo "</thead><tr><tbody>";

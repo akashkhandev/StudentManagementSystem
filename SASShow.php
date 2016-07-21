@@ -35,19 +35,20 @@ $enrollnum = $datemonth = $dateyear = "";
 	//print_r($res);
 
 	if(count($res)>0){
-		echo "<h3>EnrollmentNumber: ".$enrollnum."</h3>";
+		echo "<h5>EnrollmentNumber: ".$enrollnum."</h5>";
 		if(count($resName)>0){
 		if(empty($resName[0]["MiddleName"])){
-			echo "<h3>Name: ".$resName[0]["FirstName"]." ".$resName[0]["MiddleName"]." ".$resName[0]["LastName"]."</h3>";
+			echo "<h5>Name: ".$resName[0]["FirstName"]." ".$resName[0]["MiddleName"]." ".$resName[0]["LastName"]."</h5>";
 		}
 		else{
-			echo "<h3>Name: ".$resName[0]["FirstName"]." ".$resName[0]["LastName"]."</h3>";
+			echo "<h5>Name: ".$resName[0]["FirstName"]." ".$resName[0]["LastName"]."</h5>";
 		}
 		}
-		echo "<br><br><br><table class='pure-table'><thead><tr><th>Date</th><th>Status</th><th>Reason</th></tr>";
+		echo "<br><br><table class='pure-table'><thead><tr><th>S. No.</th><th>Date</th><th>Status</th><th>Reason</th></tr>";
 		for($x = 0; $x < count($res); $x++) {
+			$num = $x + 1;
 			echo "</thead><tbody><tr>";
-			echo "<td>".$res[$x]["DateToday"]."</td><td>".$res[$x]["Status"]."</td><td>".$res[$x]["Reason"]."</td>";
+			echo "<td>".$num."</td><td>".$res[$x]["DateToday"]."</td><td>".$res[$x]["Status"]."</td><td>".$res[$x]["Reason"]."</td>";
 			echo "</tr></tbody>";
 			//print "Hello table!";
 		}

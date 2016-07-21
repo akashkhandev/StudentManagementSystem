@@ -28,7 +28,7 @@ $name = $fname = $age = $nationality = $address = $city = $contact = $email = $c
 
 	if(count($res)>0){
 		
-		echo "<h5>Class: ".$res[0]["ClassName"]."</h5><br><h5>Section: ".$res[0]["Section"]."</h5><br>";
+		echo "<h5>Class: ".$res[0]["ClassName"]."</h5><h5>Section: ".$res[0]["Section"]."</h5><br><br>";
 		echo "<table class='pure-table'><thead><tr><th>S. No.</th><th>Enrollment Number</th><th>First Name</th><th>Middle Name</th><th>Last Name</th><th>Father's Name</th><th>Gender</th><th>Date of Birth</th><th>Address Present</th><th>Address Permanant</th><th>Religion</th><th>Sect</th><th>Hafiz-e-Quran</th><th>Cast</th><th>SubCast</th></tr>";
 		for($x = 0; $x < count($res); $x++) {
 			echo "</thead><tr><tbody>";

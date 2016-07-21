@@ -66,7 +66,7 @@
                                                      <li><a href="SPAllClassForm.php" class="dropdown">Class Performance Information</a>
                                                          	
                                                   	  </li>
-													  <li><a href="SPAllStudentForm.php" class="dropdown">Student Performance Information</a>
+													  <li><a href="SPAllStudentForm.php" class="dropdown">Student Performance Info</a>
                                                          	
                                                   	  </li>
 													  <li><a href="SPInsertForm.php" class="dropdown">Add Performance Information</a>

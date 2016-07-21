@@ -26,7 +26,7 @@ $examdate;
 		
 		
 		if (count($res) > 0) {
-			echo "<h4>Enrollment Number: ".$res[0]["EnrollmentNumber"]."</h4><br><br><br>";
+			echo "<h5>Enrollment Number: ".$res[0]["EnrollmentNumber"]."</h5><br><br><br>";
 			echo "<table class='pure-table pure-table-bordered'><thead><tr><th>S. No.</th><th>Class</th><th>Section</th><th>Term</th><th>Examination Year</th><th>Teacher's Name</th><th>Subject 1</th><th>Total Subject 1</th><th>Subject 2</th><th>Total Subject 2</th><th>Subject 3</th><th>Total Subject 3</th><th>Subject 4</th><th>Total Subject 4</th><th>Subject 5</th><th>Total Subject 5</th></tr>";
 		
 			for($x = 0; $x < count($res); $x++) {

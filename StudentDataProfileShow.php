@@ -34,10 +34,10 @@
 		include_once('StudentDataProfile.php');
 	?>
 	
-	<h5>Enrollment Number: <?php echo $enrollnum; ?></h5><br>
-	<h5>Student Name: <?php echo $sname; ?></h5><br>
-	<h5>Class: <?php echo $classname; ?></h5><br>
-	<h5>Section: <?php echo $section; ?></h5><br><br><br>
+	<h5>Enrollment Number: <?php echo $enrollnum; ?></h5>
+	<h5>Student Name: <?php echo $sname; ?></h5>
+	<h5>Class: <?php echo $classname; ?></h5>
+	<h5>Section: <?php echo $section; ?></h5><br><br>
 	<table class='pure-table'>
 	<thead>
 	<tr><th>Father Name</th><th>Gender</th><th>Date of Birth</th><th>Address Present</th>

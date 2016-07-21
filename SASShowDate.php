@@ -32,12 +32,13 @@ $dateToday = $classname = $section = "";
 	//print_r($res);
 
 	if(count($res)>0){
-		echo "<h3>Date: ".$dateToday."</h3>"."<h3>Class: ".$classname."</h3>"."<h3>Section: ".$section."</h3>";
+		echo "<h5>Date: ".$dateToday."</h5>"."<h5>Class: ".$classname."</h5>"."<h5>Section: ".$section."</h5>";
 		
-		echo "<br><br><br><table class='pure-table'><thead><tr><th>Enrollment Number</th><th>Status</th><th>Reason</th></tr></thead>";
+		echo "<br><br><table class='pure-table''><thead><tr><th>S. No.</th><th>Enrollment Number</th><th>Status</th><th>Reason</th></tr></thead>";
 		for($x = 0; $x < count($res); $x++) {
 			echo "<tbody><tr>";
-			echo "<td>".$res[$x]["EnrollmentNumber"]."</td><td>".$res[$x]["Status"]."</td><td>".$res[$x]["Reason"]."</td>";
+			$num = $x + 1;
+			echo "<td>".$num."</td><td>".$res[$x]["EnrollmentNumber"]."</td><td>".$res[$x]["Status"]."</td><td>".$res[$x]["Reason"]."</td>";
 			echo "</tr></tbody>";
 			//print "Hello table!";
 		}
