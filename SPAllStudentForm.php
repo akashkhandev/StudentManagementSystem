@@ -29,50 +29,9 @@
 <?php include 'menu.php';?>
 
 <div id="formId">
-<form id="studentform" action="SPEditForm.php" method="post">
+<form id="studentform" action="SPAllStudentTable.php" method="post">
   Enrollment Number:<br>
   <input type="text" name="enrollnum" required><br>
-  Month:<br>
-	<select name="datemonth">
-      <option value="01">Jan</option>
-      <option value="02">Feb</option>
-      <option value="03">Mar</option>
-      <option value="04">Apr</option>
-      <option value="05">May</option>
-      <option value="06">Jun</option>
-      <option value="07">Jul</option>
-      <option value="08">Aug</option>
-      <option value="09">Sep</option>
-      <option value="10">Oct</option>
-      <option value="11">Nov</option>
-      <option value="12">Dec</option>
-    </select>
-	Year:<br>
-	<input type="number" name="dateyear" min="1980" max="2099" required>
-  </br>
-  Class:<br>
-	<select name="classname">
-      <option value="Kachi">Kachi</option>
-      <option value="Grade 1">Grade 1</option>
-      <option value="Grade 2">Grade 2</option>
-      <option value="Grade 3">Grade 3</option>
-      <option value="Grade 4">Grade 4</option>
-      <option value="Grade 5">Grade 5</option>
-      <option value="Grade 6">Grade 6</option>
-      <option value="Grade 7">Grade 7</option>
-      <option value="Grade 8">Grade 8</option>
-      <option value="Grade 9">Grade 9</option>
-      <option value="Grade 10">Grade 10</option>
-    </select>
-  </br>
-  Section:<br>
-	<select name="section">
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="D">D</option>
-    </select>
-  </br>
   
   <input type="submit" value="Submit">
 </form>

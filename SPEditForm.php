@@ -39,15 +39,15 @@
   <br>
   Month:<br>
 	<select name="datemonth">
-      <option value="1" <?php if ($datemonth == '1') echo ' selected="selected"'; ?>>Jan</option>
-      <option value="2" <?php if ($datemonth == '2') echo ' selected="selected"'; ?>>Feb</option>
-      <option value="3" <?php if ($datemonth == '3') echo ' selected="selected"'; ?>>Mar</option>
-      <option value="4" <?php if ($datemonth == '4') echo ' selected="selected"'; ?>>Apr</option>
-      <option value="5" <?php if ($datemonth == '5') echo ' selected="selected"'; ?>>May</option>
-      <option value="6" <?php if ($datemonth == '6') echo ' selected="selected"'; ?>>Jun</option>
-      <option value="7" <?php if ($datemonth == '7') echo ' selected="selected"'; ?>>Jul</option>
-      <option value="8" <?php if ($datemonth == '8') echo ' selected="selected"'; ?>>Aug</option>
-      <option value="9" <?php if ($datemonth == '9') echo ' selected="selected"'; ?>>Sep</option>
+      <option value="01" <?php if ($datemonth == '1') echo ' selected="selected"'; ?>>Jan</option>
+      <option value="02" <?php if ($datemonth == '2') echo ' selected="selected"'; ?>>Feb</option>
+      <option value="03" <?php if ($datemonth == '3') echo ' selected="selected"'; ?>>Mar</option>
+      <option value="04" <?php if ($datemonth == '4') echo ' selected="selected"'; ?>>Apr</option>
+      <option value="05" <?php if ($datemonth == '5') echo ' selected="selected"'; ?>>May</option>
+      <option value="06" <?php if ($datemonth == '6') echo ' selected="selected"'; ?>>Jun</option>
+      <option value="07" <?php if ($datemonth == '7') echo ' selected="selected"'; ?>>Jul</option>
+      <option value="08" <?php if ($datemonth == '8') echo ' selected="selected"'; ?>>Aug</option>
+      <option value="09" <?php if ($datemonth == '9') echo ' selected="selected"'; ?>>Sep</option>
       <option value="10" <?php if ($datemonth == '10') echo ' selected="selected"'; ?>>Oct</option>
       <option value="11" <?php if ($datemonth == '11') echo ' selected="selected"'; ?>>Nov</option>
       <option value="12" <?php if ($datemonth == '12') echo ' selected="selected"'; ?>>Dec</option>

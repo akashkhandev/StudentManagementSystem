@@ -27,11 +27,9 @@
 <body>
 
 <?php include 'menu.php';?>
+
 <div id="formId">
-<form id="studentform" action="SPInsert.php" method="post">
-  Enrollment Number:<br>
-  <input type="text" name="enrollnum" required>
-  <br>
+<form id="studentform" action="SPAllClassTable.php" method="post">
   Month:<br>
 	<select name="datemonth">
       <option value="01">Jan</option>
@@ -73,55 +71,8 @@
       <option value="D">D</option>
     </select>
   </br>
-  Attendance Performance:<br>
-	<select name="att_per">
-      <option value="Excellent">Excellent</option>
-      <option value="Good">Good</option>
-      <option value="Satisfied">Satisfied</option>
-      <option value="Unsatisfied">Unsatisfied</option>
-      <option value="Poor">Poor</option>
-    </select>
-  </br>
-  Class Activity Performance:<br>
-	<select name="ca_per">
-      <option value="Excellent">Excellent</option>
-      <option value="Good">Good</option>
-      <option value="Satisfied">Satisfied</option>
-      <option value="Unsatisfied">Unsatisfied</option>
-      <option value="Poor">Poor</option>
-    </select>
-  </br>
-  Behaviour:<br>
-	<select name="behaviour">
-      <option value="Excellent">Excellent</option>
-      <option value="Good">Good</option>
-      <option value="Satisfied">Satisfied</option>
-      <option value="Unsatisfied">Unsatisfied</option>
-      <option value="Poor">Poor</option>
-    </select>
-  </br>
-  Quiz/Monthly Result Performance:<br>
-	<select name="qmr_per">
-      <option value="Excellent">Excellent</option>
-      <option value="Good">Good</option>
-      <option value="Satisfied">Satisfied</option>
-      <option value="Unsatisfied">Unsatisfied</option>
-      <option value="Poor">Poor</option>
-    </select>
-  </br>
-  Co-Curricular Activities Performance:<br>
-	<select name="cca_per">
-      <option value="Excellent">Excellent</option>
-      <option value="Good">Good</option>
-      <option value="Satisfied">Satisfied</option>
-      <option value="Unsatisfied">Unsatisfied</option>
-      <option value="Poor">Poor</option>
-    </select>
-  </br>
-  Remarks:<br>
-  <input type="text" name="remarks" required>
-  <br>
-  <input type="submit" value="Submit" >
+  
+  <input type="submit" value="Submit">
 </form>
 </div>
 
