@@ -60,6 +60,24 @@
                                                
                                               </ul>			
                                           </li>
+										  
+										  <li><a    href="#">Performance Information</a>
+										  <ul>
+                                                     <li><a href="SPSelectTable.php" class="dropdown">Performance Information</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SPInsertForm.php" class="dropdown">Add Performance Information</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SPGetENForm.php" class="dropdown">Update Performance Info</a>
+                                                         	
+                                                  	  </li>
+													  <li><a href="SPDeleteForm.php" class="dropdown">Delete Performance Info</a>
+                                                         	
+                                                  	  </li>
+													   
+                                              </ul>	</li>
+											  
 										  <li><a  href="#" >Attendance Information</a>
 										 
                                               
